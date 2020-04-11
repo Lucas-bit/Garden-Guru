@@ -10,53 +10,56 @@
 .login-form {
     background-color: #76a12e;
     width: 600px;
-    margin-left: 33%;
+    margin-left: 20%;
     padding: 161px;
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding-top: 12px;
+    padding-bottom: 20px;
     border-radius: 2%;
-
+    padding-left: 117px;
 }
 
 
-.login-input {
-    font-size: x-large;
+.input {
+    font-size: large;
     color: #76a12e;
     border-color: black;
     opacity: .9;
     padding-left: 10px;
     border-radius: 2%;
     margin-bottom: 10px;
+    width: 114%
 
 }
 
-.password-input {
-    font-size: x-large;
-    color: #76a12e;
-    border-color: black;
-    opacity: .9;
-    padding-left: 10px;
-    border-radius: 2%;
-}
+
 
 .username{
-    font-size: x-large;
+    font-size: large;
 
 }
 
  .password {
-    font-size: x-large;
+    font-size: large;
 
  }
 
-input.password-input{
-}
+ 
 
 .button{
-
+    padding: 10px;
+    border-radius: 15px;
+    margin-top: 20px;
+    background-color: palegoldenrod;
+    border-color: black;
+    width: 79%;
+    margin-left: 50px;
 }
+
 
 .button:hover{
-
+background-color: sienna;
 }
 
+.container{
+
+}

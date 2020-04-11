@@ -8,9 +8,7 @@ function Home(){
     return(
     <div>
         <Row>
-        <Col size='med-12'>
         <About/>
-        </Col>
         <Login/>
         </Row>
     </div>
