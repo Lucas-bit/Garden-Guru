@@ -1,0 +1,65 @@
+
+.row{
+    background-color: palegoldenrod;
+}
+
+.second-header{
+    margin-left: 55%
+}
+
+.login-form {
+    background-color: #76a12e;
+    width: 600px;
+    margin-left: 20%;
+    padding: 161px;
+    padding-top: 12px;
+    padding-bottom: 20px;
+    border-radius: 2%;
+    padding-left: 117px;
+}
+
+
+.input {
+    font-size: large;
+    color: #76a12e;
+    border-color: black;
+    opacity: .9;
+    padding-left: 10px;
+    border-radius: 2%;
+    margin-bottom: 10px;
+    width: 114%
+
+}
+
+
+
+.username{
+    font-size: large;
+
+}
+
+ .password {
+    font-size: large;
+
+ }
+
+ 
+
+.button{
+    padding: 10px;
+    border-radius: 15px;
+    margin-top: 20px;
+    background-color: palegoldenrod;
+    border-color: black;
+    width: 79%;
+    margin-left: 50px;
+}
+
+
+.button:hover{
+background-color: sienna;
+}
+
+.container{
+
+}
