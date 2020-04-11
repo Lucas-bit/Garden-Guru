@@ -1,0 +1,62 @@
+
+.row{
+    background-color: palegoldenrod;
+}
+
+.second-header{
+    margin-left: 55%
+}
+
+.login-form {
+    background-color: #76a12e;
+    width: 600px;
+    margin-left: 33%;
+    padding: 161px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    border-radius: 2%;
+
+}
+
+
+.login-input {
+    font-size: x-large;
+    color: #76a12e;
+    border-color: black;
+    opacity: .9;
+    padding-left: 10px;
+    border-radius: 2%;
+    margin-bottom: 10px;
+
+}
+
+.password-input {
+    font-size: x-large;
+    color: #76a12e;
+    border-color: black;
+    opacity: .9;
+    padding-left: 10px;
+    border-radius: 2%;
+}
+
+.username{
+    font-size: x-large;
+
+}
+
+ .password {
+    font-size: x-large;
+
+ }
+
+input.password-input{
+}
+
+.button{
+
+}
+
+.button:hover{
+
+}
+
