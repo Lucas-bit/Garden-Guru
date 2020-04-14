@@ -1,13 +1,19 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import Search, { handleSubmit } from "../Search/search"
+import Title from '../Title'
+
 
 const plants = []
 
 function Searchform(props) {
 
     return (
-        <div>
+        <React.Fragment>
+        <div className= "card-and-title-container col-md-7">
+        <div className= "card-title">
+      <Title/>
+        <div className= "welcome-container">
                <form className = "search-form">
                 <div className="inner-form"> 
                 
@@ -32,10 +38,10 @@ function Searchform(props) {
                         </div>
                     </div>
                 </div>
-                </form>
-
-                
+                </form>  
             </div>
+            </div></div>
+            </React.Fragment>
     );
   };
 

@@ -4,13 +4,11 @@ import Searchform from '../../components/AddPlant/searchForm';
 import SearchResults from '../../components/Search/search';
 import SucculentPhoto from '../../components/SucculentPhoto'
 import { Col, Row, Container } from '../../components/Grid';
-import axios from 'axios'
 
     function Search() {
         const [search, setSearch] = useState("");
         const [results, setResults] = useState([]);
         const [term, setTerm] = useState("")
-        const [url, setUrl] = useState("");
         const [error, setError] = useState("");
       
         // When the component mounts, update the title to be Wikipedia Searcher
@@ -20,10 +18,11 @@ import axios from 'axios'
           if (!term) {
             return;
           }
-          console.log(search)            
-          
+                      
+          setSearch("")
+          console.log(search)
           const key = "dFJuTGR0eWxpTTR5N2xXVTczWlMvZz09"
-          const APIurl = "https://cors-anywhere.herokuapp.com/https://trefle.io/api/plants/?common_name="+search+"&token="+key
+          const APIurl = "https://cors-anywhere.herokuapp.com/https://trefle.io/api/species/?q="+term+"&token="+key
           
           fetch(APIurl,{crossOrigin: true, origin: "http://localhost:3000"})
             .then(res => {
@@ -37,7 +36,6 @@ import axios from 'axios'
                   }
                   let plantArr = resp
                   setResults(plantArr)
-                  console.log(results)
 
                   
                   
@@ -47,10 +45,15 @@ import axios from 'axios'
         .catch(err => setError(err));
 
         setTerm("")
+
         console.log(term)
+        console.log(search)
+
         });
       
-
+        const clearForm = () =>{
+          setSearch("")
+        }
         const handleInputChange = event => {
             setSearch(event.target.value); 
         };
@@ -62,13 +65,14 @@ import axios from 'axios'
 
 
         return (
-          <div className= "card-and-title-container col-md-7">
+          <div>
             <Row>
+              <SucculentPhoto/>
               <Searchform
                 handleFormSubmit={handleFormSubmit}
                 handleInputChange={handleInputChange}
                 term={search}
-              />
+                />
               <SearchResults results={results} />
             </Row>
           </div>
