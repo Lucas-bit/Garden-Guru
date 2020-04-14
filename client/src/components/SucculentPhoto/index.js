@@ -6,11 +6,13 @@ import succulent from '../../images/green-suculent.jpg'
 function SuccelentPhoto(){
     return(
         <>
-        <div className="col-md-5">
-                <img className ='large-logo' src={succulent} alt='Garden Guru Logo'/>
-            </div>
+        
+        <img className ='large-logo' src={succulent} alt='Garden Guru Logo'/>
+        <img className ='mobile-logo' src={succulent} alt='Garden Guru Logo'/>
+           
         </>
     )
 }
 
 export default SuccelentPhoto
+
