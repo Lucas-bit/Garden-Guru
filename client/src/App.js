@@ -15,7 +15,10 @@ function App() {
           <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/home" component={Home} />
-          <Route exact path="/search" component={Search} />    
+          <Route path="/register" component={Register}/>
+          <Route path="/search" component={Search} />    
+
+              
           </Switch>
         </Router>
       </React.Fragment>
