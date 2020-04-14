@@ -2,7 +2,7 @@ import React from 'react'
 import './style.css'
 import Title from '../Title'
 import { Row, Container, Col  } from '../Grid'
-
+import passport from '../../../../config/passport'
 function Login(){
     return(
        
