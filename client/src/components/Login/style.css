@@ -1,65 +1,48 @@
+.card {
+    background-color: #639a67;
+    width: 80%;
+    margin-left: 8%;
+    margin-top: 0% !important;
+}
 
-.row{
+.welcome-container{
+    text-align: center;
+}
+
+
+.btn{
+background-color: palegoldenrod;
+color: #c5464a !important;
+}
+
+.btn:hover{
+background-color: #c5464a;
+color: palegoldenrod;
+border-color: none !important;
+}
+
+.card{
+   background-color: #639a67;
+   margin-top: 15%;
+}
+
+.btn-primary{
     background-color: palegoldenrod;
+    border-color: #c5464a !important;
 }
 
-.second-header{
-    margin-left: 55%
+.btn-primary:hover {
+    color: palegoldenrod !important;
+    background-color: #c5464a !important;
+    border-color: palegoldenrod !important;
 }
 
-.login-form {
-    background-color: #76a12e;
-    width: 600px;
-    margin-left: 20%;
-    padding: 161px;
-    padding-top: 12px;
-    padding-bottom: 20px;
-    border-radius: 2%;
-    padding-left: 117px;
+.register-btn{
+    color: palegoldenrod
 }
 
-
-.input {
-    font-size: large;
-    color: #76a12e;
-    border-color: black;
-    opacity: .9;
-    padding-left: 10px;
-    border-radius: 2%;
-    margin-bottom: 10px;
-    width: 114%
-
-}
-
-
-
-.username{
-    font-size: large;
-
-}
-
- .password {
-    font-size: large;
-
- }
-
- 
-
-.button{
-    padding: 10px;
-    border-radius: 15px;
-    margin-top: 20px;
-    background-color: palegoldenrod;
-    border-color: black;
-    width: 79%;
-    margin-left: 50px;
-}
-
-
-.button:hover{
-background-color: sienna;
-}
-
-.container{
-
+.card-and-title-container{
+     
+        padding-right: 4%;
+        padding-left: 3%;
 }

@@ -1,20 +1,12 @@
 .title{
-    margin-left: 12%;
-    width: 100%;
-    margin-bottom: 20px;
-    margin-top: 50px;
     font-size: 350%;
+    margin-top: 13%;
+    width: 100%;
+    text-align: center;
+    padding-right: 36px;
 }
 
-.welcome{
-    margin-left: 49%;
-}
-
-.paragraph{
-    margin-left: 27%;
-}
-
-.paragraph2{
-    margin-left: 38%;
-    margin-bottom: 10%;
+.title-logo{
+    vertical-align: baseline;
+    width: 65px;
 }

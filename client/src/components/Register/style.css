@@ -1,0 +1,42 @@
+body{
+    background-color: palegoldenrod;
+}
+
+.btn{
+background-color: palegoldenrod;
+color:  #c5464a;
+}
+
+.btn:hover{
+background-color:  #c5464a;
+color: palegoldenrod;
+border-color: none !important;
+}
+
+.register-card {
+    background-color: #639a67;
+    margin-top: 15% !important;
+    width: 100%!important;
+    margin-left: 0 !important;
+}
+
+.btn-primary{
+    background-color: palegoldenrod;
+    border-color:  #c5464a;
+}
+
+.btn-primary:hover {
+    color: palegoldenrod;
+    background-color:  #c5464a;
+    border-color: palegoldenrod;
+}
+
+.login-link{
+    color: palegoldenrod;
+}
+
+.logo{
+    
+    vertical-align: text-bottom;
+    width: 72px;
+}
