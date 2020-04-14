@@ -1,0 +1,70 @@
+import React, { useState, useEffect } from 'react';
+import Header from '../../components/Header';
+import Searchform from '../../components/AddPlant/searchForm';
+import SearchResults from '../../components/Search/search';
+import SucculentPhoto from '../../components/SucculentPhoto'
+import { Col, Row, Container } from '../../components/Grid';
+import axios from 'axios'
+
+    function Search() {
+        const [search, setSearch] = useState("");
+        const [results, setResults] = useState([]);
+        const [term, setTerm] = useState("")
+        const [url, setUrl] = useState("");
+        const [error, setError] = useState("");
+      
+        // When the component mounts, update the title to be Wikipedia Searcher
+        useEffect(() => {
+
+
+          if (!term) {
+            return;
+          }
+          console.log(search)            
+        
+          const key = "dFJuTGR0eWxpTTR5N2xXVTczWlMvZz09"
+          const APIurl = "https://cors-anywhere.herokuapp.com/https://trefle.io/api/plants/?common_name="+search+"&token="+key
+          
+          fetch(APIurl,{crossOrigin: true, origin: "http://localhost:3000"})
+            .then(res => {
+              // if (res.length === 0) {
+              //   throw new Error("No results found.");
+              // }
+              // if (res.status === "error") {
+              //   throw new Error(res.data.message);
+              // }
+              // // setResults(res)
+              res.json().then(res=>{
+                setResults(res)
+                setTerm("")
+                console.log(term)
+              }).catch(err=>{throw err})
+        }, [results])
+        .catch(err => setError(err));
+        });
+      
+
+        const handleInputChange = event => {
+            setSearch(event.target.value); 
+        };
+
+        const handleFormSubmit = event => {
+          event.preventDefault();
+          setTerm(search)
+        };
+
+
+        return (
+          <div className= "card-and-title-container col-md-7">
+            <Row>
+              <Searchform
+                handleFormSubmit={handleFormSubmit}
+                handleInputChange={handleInputChange}
+                term={search}
+              />
+              <SearchResults results={results} />
+            </Row>
+          </div>
+        )};
+
+export default Search;
