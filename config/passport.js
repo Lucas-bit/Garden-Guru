@@ -39,4 +39,3 @@ module.exports = function(passport) {
     });
   });
 };
-export default passport; 
