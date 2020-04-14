@@ -34,3 +34,9 @@ border-color: none !important;
 .login-link{
     color: palegoldenrod;
 }
+
+.logo{
+    
+    vertical-align: text-bottom;
+    width: 72px;
+}

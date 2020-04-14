@@ -5,12 +5,12 @@ import logo from '../../images/Garden-Guru-Transparent-Super-Tiny.png'
 function Register(){
     return(
 <React.Fragment>
-  <div className="col-md-6 m-auto">
+  <div className="col-md-7 m-auto">
     <div className="card register-card card-body">
       <h1 className="text-center mb-3">
-          <img src={logo}/>
+          <img class ='logo' src={logo}/>
         <i className="fas fa-user-plus"></i>Register 
-          <img src={logo}/>
+          <img class = 'logo' src={logo}/>
       </h1>
       <form action="/users/register" method="POST">
         <div className="form-group">

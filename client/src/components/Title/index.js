@@ -6,8 +6,7 @@ import './style.css'
 function Title(){
     return(
         <React.Fragment>
-        <h1 className = 'title'><span><img src ={Logo}/></span>Garden Guru<span><img src ={Logo}/></span></h1>
-        
+        <h1 className = 'title'><span><img className ="title-logo" src={Logo}/></span>Garden Guru<span><img className ="title-logo" src={Logo}/></span></h1>
         </React.Fragment>
     )
 }

@@ -40,3 +40,9 @@ border-color: none !important;
 .register-btn{
     color: palegoldenrod
 }
+
+.card-and-title-container{
+     
+        padding-right: 4%;
+        padding-left: 3%;
+}
