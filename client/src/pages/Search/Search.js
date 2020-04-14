@@ -21,26 +21,33 @@ import axios from 'axios'
             return;
           }
           console.log(search)            
-        
+          
           const key = "dFJuTGR0eWxpTTR5N2xXVTczWlMvZz09"
           const APIurl = "https://cors-anywhere.herokuapp.com/https://trefle.io/api/plants/?common_name="+search+"&token="+key
           
           fetch(APIurl,{crossOrigin: true, origin: "http://localhost:3000"})
             .then(res => {
-              // if (res.length === 0) {
-              //   throw new Error("No results found.");
-              // }
-              // if (res.status === "error") {
-              //   throw new Error(res.data.message);
-              // }
-              // // setResults(res)
-              res.json().then(res=>{
-                setResults(res)
-                setTerm("")
-                console.log(term)
+              res.json()
+                .then(resp=>{
+                  if (resp.length === 0) {
+                  throw new Error("No results found.");
+                  }
+                  if (resp.status === "error") {
+                  throw new Error(res.data.message);
+                  }
+                  let plantArr = resp
+                  setResults(plantArr)
+                  console.log(results)
+
+                  
+                  
+                  
               }).catch(err=>{throw err})
         }, [results])
         .catch(err => setError(err));
+
+        setTerm("")
+        console.log(term)
         });
       
 

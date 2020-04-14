@@ -8,7 +8,7 @@ function SearchResults(props) {
   return (
     <div>
         <ul>
-             <li>{props.result}</li>
+            { props.results ? props.results.map(item => (<li>{item.common_name}</li>)) : <li>No Results</li>}
         </ul>
     </div>
   
