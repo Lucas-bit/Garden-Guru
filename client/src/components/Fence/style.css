@@ -1,0 +1,12 @@
+.fence-border {
+    width: 20px;
+    border: 50px solid;
+    margin: 10%;
+    padding: 10px;
+    border-image:
+        url("../../images/wooden-fence-500px.png")     /* source */
+        50 /                           /* slice */
+        25px /                         /* width  */
+        12px                           /* outset */
+        round                          /* repeat */
+  }
