@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import Search, { handleSubmit } from "../Search/search"
 import Title from '../Title'
+import './style.css'
 
 
 const plants = []
@@ -10,7 +11,7 @@ function Searchform(props) {
 
     return (
         <React.Fragment>
-        <div className= "card-and-title-container col-md-7">
+        <div className= "card-and-title-container col-md-6">
         <div className= "card-title">
       <Title/>
         <div className= "welcome-container">

@@ -6,6 +6,7 @@ import SucculentPhoto from './components/SucculentPhoto/index'
 import {Container, Row, Col} from './components/Grid';
 import Home from './pages/Home/Home';
 import Search from './pages/Search/Search';
+import Register from './pages/SignUp/signUp';
 
 function App() {
   return (
