@@ -1,47 +1,44 @@
 import React from 'react'
+// import '/test.style.css'
+import Navbar from 'react-bootstrap/Navbar'
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './style.css'
+
+
 import search from '../../images/organic-search-icon.png'
 import navLogo from '../../images/Garden-Guru-Transparent-Super-Tiny.png'
 
 function NavBar(){
     return (
-        <React.Fragment>
-        <header className="nav-area navbar-fixed-top">
-        <div className="container">
-            <div className="row">
-                <div className="col-md-12">
-                    <div className="main-menu">
-                        <div className="navbar">
-                            <div className="navbar-header">
-                                <a href="/search" className="navbar-brand">
-
-                                    <img className="navbar-logo" src={navLogo} alt="navbar-logo"></img>
-                                GARDEN GURU
-                                </a>
-                            </div>
-                           
-                                <div id="menu-outer">
-                                <div class="table">
-                                    <ul class="horizontal-list">
-                                        <li><a href="#">SEARCH PLANTS</a></li>
-                                        <a href="/search" className ="search-icon">
-                                            <img className="search-icon" alt="search-icon" src={search}></img>
-                                        </a>
-                                        <li className="logout"><a href="/home">LOG OUT</a></li>
-                                    </ul>
-                                </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    
+        <Navbar className="nav-bar" bg="dark" variant="dark">
+          <Navbar.Brand className= "garden-guru-title text-hover" href="/search">
+            <img
+              alt=""
+              src= {navLogo}
+              width="40"
+              height="30"
+              className="gg-logo d-inline-block align-bottom"
+            />{' '}
+           Garden Guru
+          </Navbar.Brand>
+         
+           <Navbar.Brand className= "search-container text-hover" href="/search">
+           <div className ="search-word ">
+           Search
+            <img
+              alt=""
+              src= {search}
+              width="30"
+              height="30"
+              className="magnify glass d-inline-block align-bottom"
+            />{' '}
             </div>
-        
-    </header>
-
-
-
-</React.Fragment>
+          </Navbar.Brand>
+          <Navbar.Brand className="logout text-hover" href="/">
+            Log Out
+          </Navbar.Brand>
+        </Navbar>
     )
 }
 

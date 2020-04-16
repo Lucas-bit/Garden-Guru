@@ -1,4 +1,4 @@
-.title{
+.gg-title{
     font-size: 350%;
     margin-top: 13%;
     width: 100%;
@@ -10,3 +10,19 @@
     vertical-align: baseline;
     width: 65px;
 }
+
+@media only screen and (max-width: 688px) {
+    .gg-title{
+        font-size: 250%;
+        margin-top: 13%;
+        width: 97%;
+        text-align: center;
+        padding-left: 28px;
+        margin-bottom: 5%;
+     }
+
+     .gg-card-title{
+        margin-left: 20px;
+     }
+    }
+    

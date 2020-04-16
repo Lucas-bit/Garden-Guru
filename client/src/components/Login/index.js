@@ -8,7 +8,7 @@ function Login(){
        
         <React.Fragment>
         <div className= "card-and-title-container col-md-7">
-            <div className= "card-title">
+            <div className= "gg-card-title">
             <Title/>
                 <div className="card card-body">
                 <div className="welcome-container">

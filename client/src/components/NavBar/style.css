@@ -4,84 +4,46 @@ body{
     color: #212529
 }
 
-.nav-area{
-    height: 65px;
-    background-color: #639a67;
+.nav-bar{
     width: 100%;
+    background-color: #639a67 !important;
+    color: palegoldenrod !important;
 }
 
-.navbar-brand{
-    text-transform: uppercase;
-    font-size: 25px;
-    display: block;
-    font-weight: 800;
-    color: #212529;
-    padding-bottom: 18%;
-    margin-left: -99px;
+.garden-guru-title{
+text-transform: uppercase;
+display: block;
+color: #212529 !important
 }
 
-.navbar-brand:hover{
-    color: palegoldenrod
+.gg-logo{
+margin-left: 10px;
+margin-bottom: 3px;
 }
 
-.search-icon{
-    width: 25px;
-    vertical-align: bottom;
+.search-container{
+color: #212529 !important;
+margin-left: 830px;
 }
 
-
-
-.horizontal-list > li > a {
-    padding: 15px 10px;
-    color: #212529
+.magnify{
+margin-left: 10px;
 }
 
-.horizontal-list > li > a:hover,
-.horizontal-list > li > a:active,
-.horizontal-list > li > a:focus{
-    background: none;
-    color:palegoldenrod;
-    text-decoration: none;
-
+.logout{
+color: #212529 !important;
+border-left: black solid 1px;
+padding-left: 20px;
 }
 
-.navbar-toggle .icon-bar{
-    background: #777777;
+.text-hover:hover{
+    color: palegoldenrod !important
 }
 
-#menu-outer {
-    height: 84px;
-    margin-right: -108px;
+/*Mobile*/
+
+@media only screen and (max-width: 688px) {
+.search-container{
+margin-left: 92px;
 }
-
-.table {
-	display: table;   /* Allow the centering to work */
-	margin: 0 auto;
 }
-
-ul.horizontal-list {
-    width: 100%;
-    list-style: none;
-    padding-top: 4%;
-    font-weight: bold;
-    text-decoration: none;
-    color: #212529;
-	}
-	ul.horizontal-list li {
-		display: inline;
-    }
-    
-    .logout{
-    margin-left: 8px;
-    border-left: black 1px solid;
-    }
-
-    .navbar-logo{
-        width: 13%;
-        margin-bottom: 10px;
-    }
-
-    .main-menu{
-        width: 100%;
-    margin: 0 59px 0 0px;
-    }

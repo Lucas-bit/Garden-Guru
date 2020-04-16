@@ -7,12 +7,10 @@ import Title from '../../components/Title/index'
 
 function MyGarden(){
     return(
-        <div>
                 <Row>
                     <NavBar/>
                     <Cards />
                 </Row>
-        </div>
     )
 }
 

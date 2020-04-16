@@ -1,5 +1,5 @@
 .card {
-    background-color: #639a67;
+    background-color: #639a67 !important;
     width: 80%;
     margin-left: 8%;
     margin-top: 0% !important;
@@ -11,7 +11,7 @@
 
 
 .btn{
-background-color: palegoldenrod;
+background-color: palegoldenrod !important;
 color: #c5464a !important;
 }
 
@@ -51,5 +51,15 @@ border-color: none !important;
 @media only screen and (max-width: 688px) {
    .card-title{
     margin-left: 11px;
+   }
+
+   .gg-title{
+       margin-bottom: 0px;
+       margin-top: 3%
+   }
+
+   .gg-card-title{
+    margin-left: 11px;
+    margin-bottom: 20px;
    }
   }
