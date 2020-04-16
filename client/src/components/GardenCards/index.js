@@ -5,7 +5,7 @@ import Logo from '../../images/Garden-Guru-Transparent.png'
 function myServices(){
     return(
         <React.Fragment>
-        <h1 className = 'myGarden-title'><span><img className ="myGarden-logo" src={Logo}/></span>My Garden <span><img className ="myGarden-logo" src={Logo}/></span></h1>
+        <h1 className = 'myGarden-title'><span><img className ="myGarden-logo" src={Logo}/></span>MY GARDEN<span><img className ="myGarden-logo" src={Logo}/></span></h1>
         <div className="bigContainer"   >
           <div id="services" className="services-area section-padding">
             <div className="container">

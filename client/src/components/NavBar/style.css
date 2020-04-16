@@ -1,0 +1,87 @@
+
+body{
+    font-family: 'Montserrat', sans-serif;
+    color: #212529
+}
+
+.nav-area{
+    height: 65px;
+    background-color: #639a67;
+    width: 100%;
+}
+
+.navbar-brand{
+    text-transform: uppercase;
+    font-size: 25px;
+    display: block;
+    font-weight: 800;
+    color: #212529;
+    padding-bottom: 18%;
+    margin-left: -99px;
+}
+
+.navbar-brand:hover{
+    color: palegoldenrod
+}
+
+.search-icon{
+    width: 25px;
+    vertical-align: bottom;
+}
+
+
+
+.horizontal-list > li > a {
+    padding: 15px 10px;
+    color: #212529
+}
+
+.horizontal-list > li > a:hover,
+.horizontal-list > li > a:active,
+.horizontal-list > li > a:focus{
+    background: none;
+    color:palegoldenrod;
+    text-decoration: none;
+
+}
+
+.navbar-toggle .icon-bar{
+    background: #777777;
+}
+
+#menu-outer {
+    height: 84px;
+    margin-right: -108px;
+}
+
+.table {
+	display: table;   /* Allow the centering to work */
+	margin: 0 auto;
+}
+
+ul.horizontal-list {
+    width: 100%;
+    list-style: none;
+    padding-top: 4%;
+    font-weight: bold;
+    text-decoration: none;
+    color: #212529;
+	}
+	ul.horizontal-list li {
+		display: inline;
+    }
+    
+    .logout{
+    margin-left: 8px;
+    border-left: black 1px solid;
+    }
+
+    .navbar-logo{
+        width: 13%;
+        margin-bottom: 10px;
+    }
+
+    .main-menu{
+        width: 100%;
+    margin: 0 59px 0 0px;
+    }

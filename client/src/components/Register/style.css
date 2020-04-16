@@ -16,8 +16,9 @@ border-color: none !important;
 .register-card {
     background-color: #639a67;
     margin-top: 15% !important;
-    width: 100%!important;
-    margin-left: 0 !important;
+    width: 75%;
+    margin: auto;
+    margin-top: 1% !important;
 }
 
 .btn-primary{
@@ -36,7 +37,17 @@ border-color: none !important;
 }
 
 .logo{
-    
-    vertical-align: text-bottom;
-    width: 72px;
+    vertical-align: baseline;
+    width: 51px;
 }
+
+@media only screen and (max-width: 688px) {
+   .growing-plant{
+       display: none;
+   }
+   
+   .register-card{
+       margin-bottom: 5%;
+       margin-top: 5% !important;
+   }
+   }

@@ -7,7 +7,7 @@ function GrowPhoto(){
     return(
         <>
         <div className="col-md-5">
-                <img src={growing} alt="Growing Plant"/>
+                <img className ='growing-plant' src={growing} alt="Growing Plant"/>
             </div>
         </>
     )
