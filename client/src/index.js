@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-//import App from './pages/PlantData';
-import App from './pages/Test'
+// import App from './pages/PlantData';
+// import App from './pages/Test'
+import App from './pages/Line Chart'
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(

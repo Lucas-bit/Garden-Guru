@@ -53,7 +53,8 @@ function PlantData () {
             </div>
 
             <button disabled class='huge ui positive button add-another'>
-            Add Plant
+            Add Maintenance
+          
             </button>
           </form>
         </div>

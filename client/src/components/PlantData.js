@@ -1,8 +1,6 @@
 // import React from "react";
 // // import "../styles/PlantData.css";
 
-// let use
-
 // function PlantData({ users }) {
 //   function formatDate(date) {
 //     const water = //number per week
