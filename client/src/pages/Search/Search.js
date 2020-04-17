@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import Header from '../../components/Header';
 import Searchform from '../../components/AddPlant/searchForm';
 import SearchResults from '../../components/Search/search';
 import SucculentPhoto from '../../components/SucculentPhoto'
-import { Col, Row, Container } from '../../components/Grid';
+import { Row } from '../../components/Grid';
 
     function Search() {
         const [search, setSearch] = useState("");

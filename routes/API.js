@@ -2,12 +2,10 @@ const express = require('express');
 const router = express.Router();
 // Load User model
 const { ensureAuthenticated, forwardAuthenticated } = require('../config/auth');
-const Plant = require('../models/Plant')
+const User = require('../models/User')
 
 
-router.post("/api", ensureAuthenticated, (req, res) => {
-    {}
-})
+
 
 // router.post('/register', (req, res) => {
 //     const { name, email, password, password2 } = req.body;

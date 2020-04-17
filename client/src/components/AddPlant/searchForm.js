@@ -1,11 +1,9 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import Search, { handleSubmit } from "../Search/search"
 import Title from '../Title'
 import './style.css'
 
 
-const plants = []
+
 
 function Searchform(props) {
 
