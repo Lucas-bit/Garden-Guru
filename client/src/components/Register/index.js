@@ -12,7 +12,7 @@ function Register(){
         <i className="fas fa-user-plus"></i>Register 
           <img class = 'logo' src={logo}/>
       </h1>
-      <form action="/users/register" method="POST">
+      <form action="http://localhost:3001/users/register" method="POST">
         <div className="form-group">
           <label for="name">Name</label>
           <input
