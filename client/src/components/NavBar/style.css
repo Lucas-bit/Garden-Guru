@@ -1,13 +1,16 @@
 
+
 body{
     font-family: 'Montserrat', sans-serif;
     color: #212529
 }
 
 .nav-bar{
-    width: 100%;
+    width: 100% !important;
     background-color: #639a67 !important;
     color: palegoldenrod !important;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .garden-guru-title{
@@ -23,7 +26,6 @@ margin-bottom: 3px;
 
 .search-container{
 color: #212529 !important;
-margin-left: 830px;
 }
 
 .magnify{
@@ -43,7 +45,8 @@ padding-left: 20px;
 /*Mobile*/
 
 @media only screen and (max-width: 688px) {
-.search-container{
-margin-left: 92px;
+a.search-container{
+margin-left: 0px !important;
+text-align: left;
 }
 }

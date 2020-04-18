@@ -1,6 +1,7 @@
 import React from 'react'
 // import '/test.style.css'
 import Navbar from 'react-bootstrap/Navbar'
+import Nav from 'react-bootstrap/Nav'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './style.css'
 
@@ -23,8 +24,9 @@ function NavBar(){
            Garden Guru
           </Navbar.Brand>
          
-           <Navbar.Brand className= "search-container text-hover" href="/search">
-           <div className ="search-word ">
+           <Navbar.Collapse>
+           <Nav className= "search-container text-hover ml-auto" href="/search">
+           <Nav.Item className ="search-word ">
            Search
             <img
               alt=""
@@ -33,12 +35,14 @@ function NavBar(){
               height="30"
               className="magnify glass d-inline-block align-bottom"
             />{' '}
-            </div>
-          </Navbar.Brand>
-          <Navbar.Brand className="logout text-hover" href="/">
+            </Nav.Item>
+          </Nav>
+          <Nav.Item className="logout text-hover" href="/">
             Log Out
-          </Navbar.Brand>
+          </Nav.Item>
+          </Navbar.Collapse>
         </Navbar>
+        
     )
 }
 

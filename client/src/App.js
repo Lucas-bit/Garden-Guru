@@ -1,7 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from './pages/Home/Home'
-import Register from './components/Register';
 import SignUp from './pages/SignUp/signUp';
 import MyGarden from './pages/MyGarden/myGarden';
 

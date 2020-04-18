@@ -64,36 +64,84 @@ body{
 }
 
 .bigContainer{
-    margin: auto !important
+    margin: auto !important;
+    width: 90%
 }
 
 .myGarden-logo{
-    width: 8.5%;
+    width: 5.5%;
     vertical-align: baseline;
 }
 
 .myGarden-title{
     margin-top: 2%;
-    padding-left: 27.5%;
     font-size: 420%;
+    text-align: center;
 }
 
 
 /* Mobile Section*/
 
-@media only screen and (max-width: 688px) {
+@media only screen and (max-width: 1024px) {
     .bigContainer{
-     margin: 1.5% !important;
     }
 
     .myGarden-title{
-        margin-top: 5%;
-        padding-left: 5.5%;
-        font-size: 370%;
+        font-size: 300%;
+        text-align: center;
+        padding-left: 0
+
     }
 
     .myGarden-logo{
-    width: 13.5%;
+    width: 5.5%;
+    vertical-align: baseline;
+    }
+   }
+
+@media only screen and (max-width: 788px) {
+    .bigContainer{
+    }
+
+    .myGarden-title{
+        font-size: 300%;
+        text-align: center;
+        padding-left: 0
+
+    }
+
+    .myGarden-logo{
+    width: 6.5%;
+    vertical-align: baseline;
+    }
+   }
+
+@media only screen and (max-width: 688px) {
+    .bigContainer{
+    
+    padding-left: 14px;
+    }
+
+    .myGarden-title{
+        font-size: x-large;
+        margin-top: 20px;
+    }
+
+    .myGarden-logo{
+    vertical-align: baseline;
+    }
+   }
+
+   @media only screen and (max-width: 425) {
+    .bigContainer{
+        margin: 1.5% auto !important
+    }
+
+    .myGarden-title{
+        font-size: x-large;
+    }
+
+    .myGarden-logo{
     vertical-align: baseline;
     }
    }
