@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import Searchform from '../../components/AddPlant/searchForm';
-import SearchResults from '../../components/Search/search';
+import Searchform from '../../components/searchForm/searchForm'
+import SearchResults from '../../components/Search/index';
 import SucculentPhoto from '../../components/SucculentPhoto'
 import { Row } from '../../components/Grid';
 

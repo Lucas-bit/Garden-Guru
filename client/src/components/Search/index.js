@@ -1,5 +1,5 @@
 import React from "react";
-import { Row } from '../../components/Grid';
+import { Row } from '../Grid';
 import './style.css'
 
 function SearchResults(props) {
