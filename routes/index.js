@@ -22,7 +22,8 @@ router.get('/api', ensureAuthenticated, (req,res)=>{
 })
 
 router.post("/api", ensureAuthenticated, (req, res) => {
-  const plant = {plant_id: "134318", name: "woollycup buckwheat", scientific_name: "Eriogonum lachnogynum var. lachnogynum"}
+  console.log(req.body)
+  const plant = {plant_id: req.body.id, name: req.body.common_name, scientific_name: "Eriogonum lachnogynum var. lachnogynum"}
   
   User.findByIdAndUpdate({_id:req.user._id},{$push:{plants:plant}}).then(res.redirect('/api'))
 })
