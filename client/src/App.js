@@ -1,7 +1,12 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Home from './pages/Home/Home'
-import Register from './components/Register';
+import Login from './components/Login';
+import Header from './components/Header';
+import SucculentPhoto from './components/SucculentPhoto/index'
+import {Container, Row, Col} from './components/Grid';
+import Home from './pages/Home/Home';
+import Search from './pages/Search/Search';
+import Register from './pages/SignUp/signUp';
 
 function App() {
   return (
@@ -12,6 +17,8 @@ function App() {
           <Route exact path="/" component={Home} />
           <Route exact path="/home" component={Home} />
           <Route path="/register" component={Register}/>
+          <Route path="/search" component={Search} />    
+
               
           </Switch>
         </Router>
