@@ -42,6 +42,19 @@ border-color: none !important;
     width: 51px;
 }
 
+.growing-plant{
+    width: -webkit-fill-available;
+}
+
+@media only screen and (max-width: 768px){
+    h1{
+        font-size: xx-large;
+    }
+    .logo{
+         width: 14%; 
+    }
+}
+
 @media only screen and (max-width: 688px) {
    .growing-plant{
        display: none;
@@ -52,3 +65,9 @@ border-color: none !important;
        margin-top: 5% !important;
    }
    }
+
+@media only screen and (max-width: 320px){
+    h1{
+        font-size: larger
+    }
+}
