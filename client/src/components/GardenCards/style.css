@@ -1,6 +1,7 @@
 
 body{
     background-color: palegoldenrod !important;
+
 }
 
 .services-icon i {
@@ -132,7 +133,7 @@ body{
     }
    }
 
-   @media only screen and (max-width: 425) {
+   @media only screen and (max-width: 425px) {
     .bigContainer{
         margin: 1.5% auto !important
     }
@@ -143,5 +144,12 @@ body{
 
     .myGarden-logo{
     vertical-align: baseline;
+    width:8.5%
     }
+   }
+
+   @media only screen and (max-width: 325px) {
+       .myGarden-logo{
+           width: 8.5%
+       }
    }
