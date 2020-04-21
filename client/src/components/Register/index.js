@@ -9,7 +9,7 @@ function Register(){
     <div className="card register-card card-body">
       <h1 className="text-center mb-3">
           <img class ='logo' src={logo}/>
-        <i className="fas fa-user-plus"></i>Register 
+        <i className="fas fa-user-plus"></i>REGISTER 
           <img class = 'logo' src={logo}/>
       </h1>
       <form action="http://localhost:3001/users/register" method="POST">
