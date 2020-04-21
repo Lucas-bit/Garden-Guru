@@ -18,14 +18,13 @@ function SearchResults(props) {
               data-name={item.common_name}
               data-scientific={item.scientific_name}
               onClick={(event)=>{
-                console.log(event.target.dataset)
                   fetch("http://localhost:3001/api", {
                     crossOrigin: true,
                     origin: "http://localhost:3000/search",
                     method:"POST",
                     body: event.target.dataset
                       })
-                  .then(response=>{console.log(response)})
+                  .then(response=>{console.log(response.data)})
                       }}>Add {item.common_name} to garden!</button>
           </div>
           </div>

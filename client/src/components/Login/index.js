@@ -1,9 +1,37 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './style.css'
 import Title from '../Title'
 import { Row, Container, Col  } from '../Grid'
 
+
 function Login(){
+
+    const [username, setUsername] = useState("")
+    const [password, setPassword] = useState("")
+
+    const handleUserChange = event => {
+        setUsername(event.target.value); 
+    };
+    const handlePassChange = event => {
+        setPassword(event.target.value); 
+    };
+
+    const handleLogin = (event) => {
+        fetch("http://localhost:3001/users/login", {
+            method: "POST",
+            body: {
+                username: username,
+                password: password
+            }
+        })
+        .then(response=>{
+            console.log("login response:")
+            console.log(response)
+
+        })
+    }
+
+
     return(
        
         <React.Fragment>
@@ -22,6 +50,8 @@ function Login(){
                         type="email"
                         id="email"
                         name="email"
+                        value={username}
+                        onChange={handleUserChange}
                         className="form-control"
                         placeholder="Enter Email"
                     />
@@ -32,11 +62,13 @@ function Login(){
                         type="password"
                         id="password"
                         name="password"
+                        value={password}
+                        onChange={handlePassChange}
                         className="form-control"
                         placeholder="Enter Password"
                     />
                     </div>
-                    <button type="submit" className="btn btn-primary btn-block">
+                    <button type="submit" onClick={handleLogin} className="btn btn-primary btn-block">
                     Sign In
                     </button>
                 </form>

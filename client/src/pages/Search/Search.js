@@ -12,14 +12,11 @@ import { Row } from '../../components/Grid';
       
         // When the component mounts, update the title to be Wikipedia Searcher
         useEffect(() => {
-
-
           if (!term) {
             return;
           }
                       
           setSearch("")
-          console.log(search)
           const key = "dFJuTGR0eWxpTTR5N2xXVTczWlMvZz09"
           const APIurl = "https://cors-anywhere.herokuapp.com/https://trefle.io/api/species/?q="+term+"&token="+key
           
@@ -44,10 +41,6 @@ import { Row } from '../../components/Grid';
         .catch(err => setError(err));
 
         setTerm("")
-
-        console.log(term)
-        console.log(search)
-
         });
       
         const clearForm = () =>{

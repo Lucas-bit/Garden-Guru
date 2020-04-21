@@ -78,11 +78,13 @@ router.post('/register', (req, res) => {
 
 // Login
 router.post('/login', (req, res, next) => {
+
   passport.authenticate('local', {
     successRedirect: 'http://localhost:3000/search',
     failureRedirect: '/users/login',
     failureFlash: true
   })(req, res, next);
+
 });
 
 // Logout
