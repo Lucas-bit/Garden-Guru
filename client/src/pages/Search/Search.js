@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import Searchform from '../../components/searchForm/searchForm'
 import SearchResults from '../../components/Search/index';
-import SucculentPhoto from '../../components/SucculentPhoto'
+// import SucculentPhoto from '../../components/SucculentPhoto'
 import { Row } from '../../components/Grid';
+import Hamburger from '../../components/Hamburger/index';
 
     function Search() {
         const [search, setSearch] = useState("");
@@ -35,9 +36,6 @@ import { Row } from '../../components/Grid';
                   }
                   let plantArr = resp
                   setResults(plantArr)
-
-                  
-                  
                   
               }).catch(err=>{throw err})
         }, [results])
@@ -65,15 +63,13 @@ import { Row } from '../../components/Grid';
 
         return (
           <div>
-            <Row>
-              <SucculentPhoto/>
+            <Hamburger/>
               <Searchform
                 handleFormSubmit={handleFormSubmit}
                 handleInputChange={handleInputChange}
                 term={search}
                 />
               <SearchResults results={results} />
-            </Row>
           </div>
         )};
 

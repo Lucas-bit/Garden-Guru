@@ -28,8 +28,6 @@ const plantCards = [
         type: 'prehistoric',
         height: '5 meters'
     }
-   
-   
 ]
 
 
@@ -57,8 +55,6 @@ function myServices(){
                 <div className="row">
         {plantCards.map(({ id, name, type, height }) => {
              return (
-
-       
                     <div key={id} className="col-xs-12 col-sm-6 col-md-4">
                         <div className="single-services text-center wow fadeInDown" data-wow-delay="0.2s">
                             <div className="services-icon">

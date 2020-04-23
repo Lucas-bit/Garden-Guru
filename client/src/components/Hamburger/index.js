@@ -5,7 +5,8 @@ import navLogo from "../../images/Garden-Guru-Transparent-Super-Tiny.png"
 import search from "../../images/organic-search-icon.png"
 import shovel from"../../images/shovel-icon.png"
 import farmer from"../../images/farmer.png"
-import './style.css'
+import door from "../../images/log-out-icon.png"
+import "./style.css"
 
 class hamburgerMenuPage extends Component {
 state = {
@@ -20,7 +21,6 @@ toggleSingleCollapse = collapseId => () => {
 
 render(){
   return (
-    // <Router>
       <MDBContainer className="hamburger-nav-bar col-md-12">
         <MDBNavbar className="header-nav col-md-12" color="amber lighten-4" style={{ marginTop: '20px' }} light>
           <MDBContainer className="col-md-12">
@@ -38,7 +38,7 @@ render(){
             <MDBCollapse isOpen={this.state.collapse1} navbar className="dropped">
               <MDBNavbarNav left>
                 <MDBNavItem active>
-                  <MDBNavLink to="#!">
+                  <MDBNavLink to="/search">
                               <img
                           alt=""
                           src= {search}
@@ -49,8 +49,8 @@ render(){
                         Search
                   </MDBNavLink>
                 </MDBNavItem>
-                <MDBNavItem>
-                  <MDBNavLink to="#!">
+                <MDBNavItem active>
+                  <MDBNavLink to="/maintenence">
                   <img
                           alt=""
                           src= {shovel}
@@ -58,13 +58,26 @@ render(){
                           height="15"
                           className="magnify glass d-inline-block align-bottom"
                         />{' '}
-                    Mantinence</MDBNavLink>
+                    Maintenence
+                  </MDBNavLink>
                 </MDBNavItem>
-                <MDBNavItem>
-                  <MDBNavLink to="#!">
+                <MDBNavItem active>
+                  <MDBNavLink to="/mygarden">
                   <img
                           alt=""
                           src= {farmer}
+                          width="15"
+                          height="15"
+                          className="magnify glass d-inline-block align-bottom"
+                        />{' '}
+                        My Garden
+                  </MDBNavLink>
+                </MDBNavItem>
+                <MDBNavItem>
+                  <MDBNavLink to="/">
+                  <img
+                          alt=""
+                          src= {door}
                           width="15"
                           height="15"
                           className="magnify glass d-inline-block align-bottom"
@@ -77,7 +90,6 @@ render(){
           </MDBContainer>
         </MDBNavbar>
       </MDBContainer>
-    // </Router>
     );
   }
 }

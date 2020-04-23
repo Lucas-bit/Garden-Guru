@@ -1,48 +1,33 @@
-.card {
-    background-color: #639a67;
-    width: 80%;
-    margin-left: 8%;
-    margin-top: 0% !important;
+.common-name{
+    text-transform: capitalize;
 }
 
-.welcome-container{
+.add-button{
+
+    display: block;
+    height: fit-content;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    background-color: palegoldenrod !important;
+    color: #c5464a !important; 
+    border: none;
+    width: 40%;
     text-align: center;
-}
+    margin: auto;
 
 
-.btn{
-background-color: palegoldenrod;
-color: #c5464a !important;
 }
 
-.btn:hover{
-background-color: #c5464a;
-color: palegoldenrod;
-border-color: none !important;
-}
-
-.card{
-   background-color: #639a67;
-   margin-top: 15%;
-}
-
-.btn-primary{
-    background-color: palegoldenrod;
-    border-color: #c5464a !important;
-}
-
-.btn-primary:hover {
-    color: palegoldenrod !important;
-    background-color: #c5464a !important;
-    border-color: palegoldenrod !important;
-}
-
-.register-btn{
-    color: palegoldenrod
-}
-
-.card-and-title-container{
-     
-        padding-right: 4%;
-        padding-left: 3%;
-}
+.add-button:hover{
+    background-color: #639a67 !important;
+    border: palegoldenrod solid 1px !important;
+    color: palegoldenrod !important
+    }

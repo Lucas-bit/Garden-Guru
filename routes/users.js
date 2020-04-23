@@ -78,9 +78,10 @@ router.post('/register', (req, res) => {
 
 // Login
 router.post('/login', (req, res, next) => {
+  console.log(res)
   passport.authenticate('local', {
-    successRedirect: 'http://localhost:3000/search',
-    failureRedirect: '/users/login',
+    successRedirect: 'http://localhost:3000/mygarden',
+    failureRedirect: 'http://localhost:3000/invalid',
     failureFlash: true
   })(req, res, next);
 });

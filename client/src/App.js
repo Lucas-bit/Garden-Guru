@@ -6,8 +6,9 @@ import {Container, Row, Col} from './components/Grid';
 import Home from './pages/Home/Home';
 import Search from './pages/Search/Search';
 import Register from './pages/SignUp/signUp';
-import Home from './pages/Home/Home'
-import SignUp from './pages/SignUp/signUp';
+import Invalid from './pages/Invalid/invalid'
+// import Home from './pages/Home/Home'
+// import SignUp from './pages/SignUp/signUp';
 import MyGarden from './pages/MyGarden/myGarden';
 
 
@@ -17,11 +18,12 @@ function App() {
       <React.Fragment>
         <Router>
           <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/home" component={Home} />
+          <Route exact path="/" component={Home}/>
+          <Route path="/home" component={Home} />
           <Route path="/register" component={Register}/>
           <Route path="/search" component={Search} />    
           <Route path="/mygarden" component={MyGarden}/>
+          <Route path="/invalid" component={Invalid}/>  
               
           </Switch>
         </Router>
