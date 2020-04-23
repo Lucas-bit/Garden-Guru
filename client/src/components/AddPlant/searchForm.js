@@ -1,48 +1,48 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import Search, { handleSubmit } from "../Search/search"
+import React from 'react'
+import ReactDOM from 'react-dom'
+import Search, { handleSubmit } from '../Search/search'
 import Title from '../Title'
-
 
 const plants = []
 
-function Searchform(props) {
+function Searchform (props) {
+  return (
+    <>
+      <div className='card-and-title-container col-md-7'>
+        <div className='card-title'>
+          <Title />
+          <div className='welcome-container'>
+            <form className='search-form'>
+              <div className='inner-form'>
 
-    return (
-        <React.Fragment>
-        <div className= "card-and-title-container col-md-7">
-        <div className= "card-title">
-      <Title/>
-        <div className= "welcome-container">
-               <form className = "search-form">
-                <div className="inner-form"> 
-                
-                    <div className = "other-inner-form">
-                    
-                        <div className ="plantname">
-                         <input 
-                            placeholder="Search for a plant!" 
-                            className ="input"
-                            type="text"
-                            value={props.search}
-                            name="search"
-                            onChange= {props.handleInputChange}
-                            />
-                        </div> 
-                        <div>
-                        <button 
-                            id="search-button" 
-                            className="button"
-                            onClick={props.handleFormSubmit}
-                        > Search </button>
-                        </div>
-                    </div>
+                <div className='other-inner-form'>
+
+                  <div className='plantname'>
+                    <input
+                      placeholder='Search for a plant!'
+                      className='input'
+                      type='text'
+                      value={props.search}
+                      name='search'
+                      onChange={props.handleInputChange}
+                    />
+                  </div>
+                  <div>
+                    <button
+                      id='search-button'
+                      className='button'
+                      onClick={props.handleFormSubmit}
+                    > Search
+                    </button>
+                  </div>
                 </div>
-                </form>  
-            </div>
-            </div></div>
-            </React.Fragment>
-    );
-  };
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </>
+  )
+};
 
-export default Searchform;
+export default Searchform

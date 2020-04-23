@@ -1,4 +1,4 @@
-
+/*eslint-disable */
 const express = require("express");
 const mongojs = require("mongojs");
 const path = require("path")
@@ -15,7 +15,8 @@ app.use(express.json());
 app.use(express.static("public"));
 
 const databaseUrl = "garden";
-const collections = ["plants"];
+const collections = ["plants", "maintenance"];
+
 
 const db = mongojs(databaseUrl, collections);
 db.on("error", error => {
@@ -62,7 +63,41 @@ app.put("/markunread/:id", (req, res) => {
   // as (mongojs.ObjectId(IdYouWantToFind))
 });
 
+// route for maintenance
+app.get('/api/maintenance', (req, res) => {
+// call database for all entries
+ maintenance.find()
+
+ .then(dbMaintenance => {
+  res.json(dbMaintenance)
+})
+.catch(err => {
+  res.status(404).json(err)
+
+ })
+})
+//receiveing entry from front end accessable on req.body
+  // req.body save to the database
+app.post("/api/maintenance", ({ body }, res) => {
+  // we receive data on req.body
+  console.log('=============')
+  console.log(body)
+  maintenance.create({ maintenance: [body] })
+    .then(dbMaintenance => {
+      console.log(dbMaintenance)
+      res.json(dbMaintenance)
+    })
+    .catch(err => {
+      console.log(err)
+      res.status(404).json(err)
+    })
+})
+ 
+
+
+
 // Listen on port 3001
 app.listen(3001, () => {
   console.log("App running on port 3000!");
 });
+
