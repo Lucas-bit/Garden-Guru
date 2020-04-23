@@ -4,9 +4,15 @@ const mongojs = require("mongojs");
 const path = require("path")
 const logger = require("morgan");
 const fetch = require('node-fetch');
-
+const mongoose = require('mongoose')
 const app = express();
 
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/workout";
+
+mongoose.connect(MONGODB_URI, {
+  useNewUrlParser: true,
+  useFindAndModify: false
+})
 app.use(logger("dev"));
 
 app.use(express.urlencoded({ extended: true }));
@@ -17,11 +23,11 @@ app.use(express.static("public"));
 const databaseUrl = "garden";
 const collections = ["plants", "maintenance"];
 
-
-const db = mongojs(databaseUrl, collections);
-db.on("error", error => {
-  console.log("Database Error:", error);
-});
+const maintenance = require ("./models/maintenance")
+// const db = mongojs(databaseUrl, collections);
+// db.on("error", error => {
+//   console.log("Database Error:", error);
+// });
 
 const key = "dFJuTGR0eWxpTTR5N2xXVTczWlMvZz09"
 const url = "https://trefle.io/api/plants?token="+key
@@ -82,7 +88,7 @@ app.post("/api/maintenance", ({ body }, res) => {
   // we receive data on req.body
   console.log('=============')
   console.log(body)
-  maintenance.create({ maintenance: [body] })
+  maintenance.create( body )
     .then(dbMaintenance => {
       console.log(dbMaintenance)
       res.json(dbMaintenance)

@@ -2,8 +2,9 @@
 
 import React from 'react'
 import { DropdownButton, Dropdown } from 'react-bootstrap'
+import Chart from '../../pages/Line Chart'
 
-function Maintenance() {
+function Maintenance(props) {
   return (
     <div className='wrapper'>
 
@@ -15,7 +16,7 @@ function Maintenance() {
 <br/>
 
 <DropdownButton id="dropdown-basic-button" title="Water">
-  <Dropdown.Item href="#/action-1">Water Completed</Dropdown.Item>
+  <Dropdown.Item onClick={() => console.log("hello")} href="#/action-1">Water Completed</Dropdown.Item>
   <Dropdown.Item href="#/action-2">Opps Delete</Dropdown.Item>
  
 </DropdownButton>
@@ -36,6 +37,7 @@ function Maintenance() {
  
 </DropdownButton>
 
+<Chart />
 
     </div>
   )

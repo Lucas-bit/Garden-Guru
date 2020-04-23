@@ -1,21 +1,26 @@
 /*eslint-disable */
 import React, { Component } from 'react'
 import CanvasJSReact from '../assets/canvasjs.react'
-import Axios from 'axios'
+import axios from 'axios'
+import options from './testData'
 
 var CanvasJS = CanvasJSReact.CanvasJS
 var CanvasJSChart = CanvasJSReact.CanvasJSChart
 
-class App extends Component {
-
-  state = {
-
-    options: null
+class Chart extends Component {
+constructor(){
+  super();
+  this.state={
+    options:options
   }
+}
+
 // call the server and request all the maintenance entries
   componentDidMount() {
-    Axios.get('/api/maintenance').then(function (response) {
-      this.setState({ options: response.data })
+    console.log('Component did Mount')
+    axios.get('/api/maintenance').then((response) =>{
+    // this.setState({ options: response.data })
+    console.log(response)
     })
   }
 
@@ -33,4 +38,4 @@ class App extends Component {
   }
 }
 
-export default App
+export default Chart
