@@ -22,7 +22,7 @@ import Hamburger from '../../components/Hamburger/index';
           setSearch("")
           console.log(search)
           const key = "dFJuTGR0eWxpTTR5N2xXVTczWlMvZz09"
-          const APIurl = "https://cors-anywhere.herokuapp.com/https://trefle.io/api/species/?q="+term+"&token="+key
+          const APIurl = "https://cors-anywhere-guanaco.herokuapp.com/https://trefle.io/api/species/?q="+term+"&token="+key
           
           fetch(APIurl,{crossOrigin: true, origin: "http://localhost:3000"})
             .then(res => {

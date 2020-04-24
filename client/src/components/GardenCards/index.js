@@ -1,6 +1,7 @@
 import React from 'react'
 import './style.css'
 import Logo from '../../images/Garden-Guru-Transparent.png'
+import returnPlantCard from '../../components/Search/index'
 
 const plantCards = [
     {
@@ -29,8 +30,8 @@ const plantCards = [
         height: '5 meters'
     }
 ]
-
-
+console.log(plantCards)
+console.log(plantCards.push(returnPlantCard))
 
 
 
@@ -53,7 +54,7 @@ function myServices(){
                     </div>
                 </div>
                 <div className="row">
-        {plantCards.map(({ id, name, type, height }) => {
+        {plantCards.map(({id, name, type, height }) => {
              return (
                     <div key={id} className="col-xs-12 col-sm-6 col-md-4">
                         <div className="single-services text-center wow fadeInDown" data-wow-delay="0.2s">

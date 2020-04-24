@@ -2,6 +2,17 @@ import React from "react";
 import { Row } from '../Grid';
 import './style.css'
 
+
+
+
+const plantArr = [
+  {
+  name:'tree'  
+  }
+]
+console.log(plantArr)
+
+
 function SearchResults(props) {
 
   return (
@@ -51,7 +62,11 @@ function SearchResults(props) {
                                     body: event.target.dataset
                                       })
                                   .then(response=>{console.log(response)})
-                                      }}>Add {item.common_name} to my garden!
+                                  .then(plantArr.push(event.target.dataset))
+                                  .then(console.log(plantArr))
+                              }
+                                    }
+                                     >Add {item.common_name} to my garden!
                                 </button>
                           </div>
                         </div>
@@ -64,3 +79,6 @@ function SearchResults(props) {
 )};
 
     export default SearchResults;
+    export  function returnPlantArr() {
+      return plantArr;
+    }
