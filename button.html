@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+        <button id="water" type="button">Water</button>
+        <button id="prun" type="button">Prun</button>
+        <button id="weed" type="button">Weed</button>
+        <div class="span9">
+             <h2>Results</h2>
+        
+            <div class="container-fluid">
+                <div id="colChartContainer" style="height: 300px; width: 100%;"></div>
+            </div>
+        </div>
+    
+    
+</body>
+
+</html>
+<script>
+        function makeChart() {
+            var prunId = document.getElementById("prun").value;
+            var waterId = document.getElementById("water").value;
+            //alert(p);
+            //var dieResults = coinToss(p, numTrials);
+            var dieResults = [waterId * prunId / 100, waterId * (1 - prunId / 100)]
+            var water = dieResults[0];
+            var prun = dieResults[1];
+        
+            var chart = new CanvasJS.Chart("colChartContainer", {
+                theme: "theme2",
+                title: {
+                    text: "Garden results"
+                },
+                data: [{
+                    type: "column",
+                    dataPoints: [{
+                        label: "water",
+                        y: water
+                    }, {
+                        label: "prun",
+                        y: prun
+                    }]
+                }]
+            });
+        
+            chart.render();
+        }
+        
+        
+        var waterButton = document.getElementById("water");
+        waterButton.addEventListener("click", makeChart);
+        var prunButton = document.getElementById("prun");
+        prunButton.addEventListener("click", makeChart);
+        </script>
