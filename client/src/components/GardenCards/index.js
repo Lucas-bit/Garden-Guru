@@ -3,7 +3,7 @@ import './style.css'
 import Logo from '../../images/Garden-Guru-Transparent.png'
 import returnPlantCard from '../../components/Search/index'
 
-let plantCards = [
+const plantCards = [
     {
         id: 1,
         name: 'tree',
@@ -30,10 +30,8 @@ let plantCards = [
         height: '5 meters'
     }
 ]
-
-plantCards.push(returnPlantCard)
 console.log(plantCards)
-
+console.log(plantCards.push(returnPlantCard))
 
 
 
