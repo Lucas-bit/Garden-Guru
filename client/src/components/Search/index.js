@@ -43,7 +43,13 @@ function SearchResults(props) {
                 </div>
                   <div className= "row">
                     <div className="col-xs-12 col-sm-6 col-md-12">
-                    { props.results ? props.results.map(item => (
+                    { props.results && props.results.length > 0 
+                      ?  
+                      props.results[0] === "" 
+                      ? 
+                      <p></p> 
+                      : 
+                      props.results.map(item => (
                       <div key={item.id} className="plant-card single-services text-center wow fadeInDown" data-wow-delay="0.2s">
                         <div className="services-content">
                           <h4 className='common-name'>{item.common_name}</h4>
@@ -59,7 +65,7 @@ function SearchResults(props) {
                                 </button>
                           </div>
                         </div>
-                          )) : <li>No Results</li>}
+                          )) : <p className="no-results">Sorry we dont have that plant in our records yet, hopefully it will be added soon as our library is ever growing!</p>}
                       </div>
                     </div>
                   </div>

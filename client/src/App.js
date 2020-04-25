@@ -10,6 +10,7 @@ import Invalid from './pages/Invalid/invalid'
 // import Home from './pages/Home/Home'
 // import SignUp from './pages/SignUp/signUp';
 import MyGarden from './pages/MyGarden/myGarden';
+import failedSearch from './pages/FailedSearch/FailedSearch'
 
 
 function App() {
@@ -24,7 +25,7 @@ function App() {
           <Route path="/search" component={Search} />    
           <Route path="/mygarden" component={MyGarden}/>
           <Route path="/invalid" component={Invalid}/>  
-              
+          <Route path="/*" component={failedSearch}/>
           </Switch>
         </Router>
       </React.Fragment>

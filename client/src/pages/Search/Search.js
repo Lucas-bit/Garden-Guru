@@ -7,7 +7,7 @@ import Hamburger from '../../components/Hamburger/index';
 
 function Search() {
   const [search, setSearch] = useState("");
-  const [results, setResults] = useState([]);
+  const [results, setResults] = useState([""]);
   const [term, setTerm] = useState("");
   const [error, setError] = useState("");
   const [plants, setPlants] = useState([]); //if to push back to the app.js and pass the actual plant object to the garden
@@ -46,12 +46,12 @@ function Search() {
       .then(res => {
         res.json()
           .then(resp => {
-            if (resp.length === 0) {
-              throw new Error("No results found.");
-            }
-            if (resp.status === "error") {
-              throw new Error(res.data.message);
-            }
+            // if (resp.length === 0) {
+            //   throw new Error("No results found.");
+            // }
+            // if (resp.status === "error") {
+            //   throw new Error(res.data.message);
+            // }
             let plantArr = resp
             setResults(plantArr)
 
