@@ -1,0 +1,75 @@
+.failed-search-content{
+  text-align: center;
+  padding-top: 8%;
+}
+
+.number4{
+font-size: 15rem;
+}
+
+.four-0-four-logo{
+  width: 16.5%;
+  vertical-align: baseline;
+}
+
+.oops{
+  text-align: center;
+}
+
+.return-button{
+  background-color: #639a67;
+  margin-top: 20px;
+  box-shadow: rgba(58,78,95,0.2) 0 10px 16px, rgba(58,78,95,0.05) 0 -5px 16px;
+  border: none;
+  border-radius: .25rem;
+  width: max-content;
+  margin: auto;
+  margin-top: 20px
+}
+
+.return-button:hover{
+color: palegoldenrod
+}
+
+
+@media only screen and (max-width: 1024px) {
+
+.four-0-four-logo{  
+  width: 24.5%;
+  vertical-align: baseline;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+
+.four-0-four-logo{  
+  width: 30.5%;
+  vertical-align: baseline;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+
+.four-0-four-logo{  
+  vertical-align: baseline;
+  }
+
+.number4{
+  font-size: 7rem;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+
+.return-button{
+  width: 100%;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+
+.four-0-four-logo{
+  width: 40.5%;
+  }
+}
+
