@@ -26,6 +26,7 @@ render(){
         <MDBNavbar className="header-nav col-md-12" color="amber lighten-4" style={{ marginTop: '20px' }} light>
           <MDBContainer className="col-md-12">
             <MDBNavbarBrand>
+            <MDBNavLink to="/mygarden">
             <img
               alt=""
               src= {navLogo}
@@ -34,12 +35,13 @@ render(){
               className="gg-logo d-inline-block align-bottom"
             />{' '}
            Garden Guru
+           </MDBNavLink>
             </MDBNavbarBrand>
             <MDBHamburgerToggler color="#d3531a" id="hamburger1" onClick={this.toggleSingleCollapse('collapse1')} />
             <MDBCollapse isOpen={this.state.collapse1} navbar className="dropped">
               <MDBNavbarNav left>
                 <MDBNavItem active>
-                  <MDBNavLink to="#!">
+                  <MDBNavLink to="/search">
                               <img
                           alt=""
                           src= {search}

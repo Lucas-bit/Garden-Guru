@@ -30,10 +30,8 @@ router.post('/register', (req, res) => {
 router.post('/login', passport.authenticate('local', {
   session: false
 }), (req, res) => {
-
   // Token
   const token = jwt.sign({id: req.user.id}, 'jwt_secret')
-
   res.json({token: token})
 })
 
@@ -56,13 +54,14 @@ router.get('/mygarden', passport.authenticate('jwt', {
 router.get('/api/user', passport.authenticate('jwt', {
   session: false
 }), (req, res) => {
+  console.log(req.user)
   if ( !req.user ) {
     res.json({
       username: 'nobody'
     })
   }
-  const user = req.user.username
-  User.find({ username : user}).then(response=>{return response})
+  const user = req.user
+  User.find({ username : user.username }).then(response=>{return response})
   res.send(user)
 
 })
@@ -76,21 +75,22 @@ router.post("/api", passport.authenticate('jwt', {
   if ( !req.user ) {
     alert("No User")
   }
-const plant = req.body
-const query = { username: req.user.username }
-User.findOneAndUpdate(query,{ $push: { plants: {
-  name:plant.name,
-  plant_id:plant.id,
-  scientific_name:plant.scientific
-  }}},
-{safe: true, new : true},(err,res)=>{
-  if (err) {console.log(err)}
+  const plant = req.body
+  const query = { username: req.user.username }
+    User.findOneAndUpdate(query,
+      { $push: 
+        { plants: {
+            name:plant.name,
+            plant_id:plant.id,
+            scientific_name:plant.scientific
+            }}},
+      {safe: true, new : true},(err,res)=>{
+        if (err) {console.log(err)}
 
-  console.log("Added plant!")
-  console.log(res)
-
-})
-})
+        console.log("Added plant!")
+        
+    })
+    })
 
 
 module.exports = router
