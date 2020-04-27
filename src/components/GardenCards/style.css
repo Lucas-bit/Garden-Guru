@@ -1,0 +1,155 @@
+
+body{
+    background-color: palegoldenrod !important;
+
+}
+
+.services-icon i {
+    font-size: 35px;
+    color: palegoldenrod;
+}
+
+.services-content h3 {
+    line-height: 1.9;
+    text-transform: uppercase;
+}
+
+.services-icon {
+    border: 1px solid #639a67;
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    padding: 20px;
+    background-color: #c5464a;
+}
+
+.single-services {
+    padding: 40px 20px;
+    box-shadow: rgba(58,78,95,0.2) 0 10px 16px, rgba(58,78,95,0.05) 0 -5px 16px;
+    margin-bottom: 15px;
+    -webkit-border-radius:10px;
+    -moz-border-radius:10px;
+    border-radius:10px;
+    background-color: #639a67;
+}
+
+.single-services:hover {
+    box-shadow: 1px 3px 4px 5px  #639a67;
+    transition: ease .09s;
+}
+
+.single-services:hover .services-icon{
+    background-color: palegoldenrod;
+    transition: ease .3s;
+    border-color: #c5464a;
+}
+
+.single-services:hover .services-icon i{
+    color: #c5464a;
+}
+
+.single-services:hover{
+    background-color: #c5464a;
+    -webkit-transition: .9s;
+    -moz-transition: .9s ;
+    -ms-transition: .9s ;
+    -o-transition: .9s ;
+    transition: .9s ;
+}
+.single-services:hover .services-content{
+    color: palegoldenrod;
+}
+.single-services:hover .services-content h3{
+    color: palegoldenrod;
+}
+
+.bigContainer{
+    margin: auto !important;
+    width: 90%
+}
+
+.myGarden-logo{
+    width: 5.5%;
+    vertical-align: baseline;
+}
+
+.myGarden-title{
+    margin-top: 2%;
+    font-size: 420%;
+    text-align: center;
+}
+
+
+/* Mobile Section*/
+
+@media only screen and (max-width: 1024px) {
+    .bigContainer{
+    }
+
+    .myGarden-title{
+        font-size: 300%;
+        text-align: center;
+        padding-left: 0
+
+    }
+
+    .myGarden-logo{
+    width: 5.5%;
+    vertical-align: baseline;
+    }
+   }
+
+@media only screen and (max-width: 788px) {
+    .bigContainer{
+    }
+
+    .myGarden-title{
+        font-size: 300%;
+        text-align: center;
+        padding-left: 0
+
+    }
+
+    .myGarden-logo{
+    width: 6.5%;
+    vertical-align: baseline;
+    }
+   }
+
+@media only screen and (max-width: 688px) {
+    .bigContainer{
+    
+    padding-left: 14px;
+    }
+
+    .myGarden-title{
+        font-size: x-large;
+        margin-top: 20px;
+    }
+
+    .myGarden-logo{
+    vertical-align: baseline;
+    }
+   }
+
+   @media only screen and (max-width: 425px) {
+    .bigContainer{
+        margin: 1.5% auto !important
+    }
+
+    .myGarden-title{
+        font-size: x-large;
+    }
+
+    .myGarden-logo{
+    vertical-align: baseline;
+    width:8.5%
+    }
+   }
+
+   @media only screen and (max-width: 325px) {
+       .myGarden-logo{
+           width: 8.5%
+       }
+   }

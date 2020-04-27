@@ -1,22 +1,96 @@
-const express = require('express');
-const router = express.Router();
-const { ensureAuthenticated, forwardAuthenticated } = require('../config/auth');
-const Plant = require('../models/Plant')
-// Welcome Page
-router.get('/', forwardAuthenticated, (req, res) => res.render('welcome'));
+const express = require('express'),
+      passport = require('passport'),
+      jwt = require('jsonwebtoken'),
+      User = require('../db/Users'),
+      router = express.Router()
 
-// Dashboard
-router.get('/dashboard', ensureAuthenticated, (req, res) =>
-  res.render('dashboard', {
-    user: req.user
+/* API entrypoints */
+// Singup
+router.post('/register', (req, res) => {
+  console.log(req.body)
+  var user = new User({
+    name: req.body.name,
+    username: req.body.email,
+    password: req.body.password
   })
-);
 
-router.get('/api', ensureAuthenticated, (_,res)=>res.json(
-  Plant.find({})
-  .then(plants=>{res.json(plants)})
-  .catch(err=>{console.log(err)})
-))
+  user.save().then(() => {
+
+    // Token
+    const token = jwt.sign({id: user.id}, 'jwt_secret')
+    res.json({token:token})
+
+  }).catch((err) => {
+    console.error(err)
+    res.status().json({})
+  })
+})
+
+// Login
+router.post('/login', passport.authenticate('local', {
+  session: false
+}), (req, res) => {
+  // Token
+  const token = jwt.sign({id: req.user.id}, 'jwt_secret')
+  res.json({token: token})
+})
+
+// Return user data
+router.get('/mygarden', passport.authenticate('jwt', {
+  session: false
+}), (req, res) => {
+  if ( !req.user ) {
+    res.json({
+      username: 'nobody'
+    })
+  }
+
+  res.json({
+    username: req.user.username
+  })
+})
 
 
-module.exports = router;
+router.get('/api/user', passport.authenticate('jwt', {
+  session: false
+}), (req, res) => {
+  console.log(req.user)
+  if ( !req.user ) {
+    res.json({
+      username: 'nobody'
+    })
+  }
+  const user = req.user
+  User.find({ username : user.username }).then(response=>{return response})
+  res.send(user)
+
+})
+
+
+
+
+router.post("/api", passport.authenticate('jwt', {
+  session: false
+}), (req, res) => {
+  if ( !req.user ) {
+    alert("No User")
+  }
+  const plant = req.body
+  const query = { username: req.user.username }
+    User.findOneAndUpdate(query,
+      { $push: 
+        { plants: {
+            name:plant.name,
+            plant_id:plant.id,
+            scientific_name:plant.scientific
+            }}},
+      {safe: true, new : true},(err,res)=>{
+        if (err) {console.log(err)}
+
+        console.log("Added plant!")
+        
+    })
+    })
+
+
+module.exports = router

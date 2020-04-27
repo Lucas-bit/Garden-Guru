@@ -1,0 +1,73 @@
+body{
+    background-color: palegoldenrod;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.btn{
+background-color: palegoldenrod;
+color:  #c5464a;
+}
+
+.btn:hover{
+background-color:  #c5464a;
+color: palegoldenrod;
+border-color: none !important;
+}
+
+.register-card {
+    background-color: #639a67;
+    margin-top: 15% !important;
+    width: 75%;
+    margin: auto;
+    margin-top: 1% !important;
+}
+
+.btn-primary{
+    background-color: palegoldenrod;
+    border-color:  #c5464a;
+}
+
+.btn-primary:hover {
+    color: palegoldenrod;
+    background-color:  #c5464a;
+    border-color: palegoldenrod;
+}
+
+.login-link{
+    color: palegoldenrod;
+}
+
+.logo{
+    vertical-align: baseline;
+    width: 51px;
+}
+
+.growing-plant{
+    width: -webkit-fill-available;
+}
+
+@media only screen and (max-width: 768px){
+    h1{
+        font-size: xx-large;
+    }
+    .logo{
+         width: 14%; 
+    }
+}
+
+@media only screen and (max-width: 688px) {
+   .growing-plant{
+       display: none;
+   }
+   
+   .register-card{
+       margin-bottom: 5%;
+       margin-top: 5% !important;
+   }
+   }
+
+@media only screen and (max-width: 320px){
+    h1{
+        font-size: larger
+    }
+}
