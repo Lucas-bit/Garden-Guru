@@ -1,0 +1,26 @@
+.hamburger-nav-bar{
+    background-color: #639a67;
+}
+
+.header-nav{
+    margin-top: 0px !important
+}
+
+.container{
+    padding-left: 8px;
+}
+
+.gg-logo{
+    margin-left: 0px;
+    margin-bottom: 4px;
+}
+
+a:hover{
+    color: palegoldenrod !important
+}
+
+
+.magnify {
+    margin-left: 5px;
+    margin-bottom: 6px;
+}
