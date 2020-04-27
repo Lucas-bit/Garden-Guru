@@ -31,7 +31,7 @@ function SearchResults(props) {
     </div>
 </div> */}
 
-<div id="services" className="services-area section-padding">
+<div id="services" className="services-area section-padding col-xs-12 col-sm-6 col-md-12">
             <div className="container">
                 <div className="row">
                     <div className="col-md-12">
@@ -74,6 +74,4 @@ function SearchResults(props) {
 )};
 
     export default SearchResults;
-    export  function returnPlantArr() {
-      return plantArr;
-    }
+  

@@ -80,7 +80,7 @@ function Search() {
 
 
   return (
-    <div>
+    <React.Fragment>
       <Hamburger />
       <Searchform
         handleFormSubmit={handleFormSubmit}
@@ -88,7 +88,7 @@ function Search() {
         term={search}
       />
       <SearchResults results={results} handlePlantChange={handlePlantChange} />
-    </div>
+      </React.Fragment>
   )
 };
 

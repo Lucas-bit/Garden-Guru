@@ -31,8 +31,6 @@ let plantCards = [
     }
 ]
 
-plantCards.push(returnPlantCard)
-console.log(plantCards)
 
 
 

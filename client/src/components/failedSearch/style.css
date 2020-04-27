@@ -1,47 +1,33 @@
-/* body { 
-  background-color: #007aff; 
-  color: black;
-  font-size: 100%;
-  line-height: 1.5;
-}
-
-.button {
-  font-weight: 300;
-  color: #fff;
-  font-size: 1.2em;
-  text-decoration: none;
-  border: 1px solid #efefef;
-  padding: .5em;
-  border-radius: 3px;
-  float: left;
-  margin: 6em 0 0 -155px;
-  left: 50%;
-  position: relative;
-  transition: all .3s linear;
-}
-
-.button:hover {
-  background-color: #007aff;
-  color: #fff;
-}
-
-p {
-  font-size: 2em;
+.failed-search-content{
   text-align: center;
-  font-weight: 100;
+  padding-top: 8%;
 }
 
-h1 {
-  text-align: center;
-  font-size: 15em;
-  font-weight: 100;
+.number4{
+font-size: 15rem;
 }
 
 .four-0-four-logo{
+  width: 16.5%;
   vertical-align: baseline;
-  width: 20%;
 }
 
-.content{
-  padding-top: 20px;
-} */
+.oops{
+  text-align: center;
+}
+
+.return-button{
+  background-color: #639a67;
+  margin-top: 20px;
+  box-shadow: rgba(58,78,95,0.2) 0 10px 16px, rgba(58,78,95,0.05) 0 -5px 16px;
+  border: none;
+  border-radius: .25rem;
+  width: max-content;
+  margin: auto;
+  margin-top: 20px
+}
+
+.return-button:hover{
+color: palegoldenrod
+}
+
