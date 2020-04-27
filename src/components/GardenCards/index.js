@@ -28,7 +28,7 @@ function myServices(props){
                                                     <i className="fa fa-users"></i>
                                                 </div>
                                                 <div className="services-content">
-                                                    <h3>{name}</h3> 
+                                                    <h3>{ name }</h3> 
                                                 </div>
                                             </div>
                                         </div>
