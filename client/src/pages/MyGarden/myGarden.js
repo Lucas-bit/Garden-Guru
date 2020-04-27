@@ -5,10 +5,10 @@ import Hamburger from '../../components/Hamburger/index'
 
 function MyGarden(){
     return(
-    <div>
-        <Hamburger/>
-        <Cards />
-    </div>
+        <React.Fragment>
+            <Hamburger/>
+            <Cards />
+        </React.Fragment>
     )
 }
 

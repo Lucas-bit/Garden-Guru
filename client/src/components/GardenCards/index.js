@@ -1,7 +1,7 @@
 import React from 'react'
 import './style.css'
 import Logo from '../../images/Garden-Guru-Transparent.png'
-import returnPlantCard from '../../components/Search/index'
+import potted from '../../images/pottedSucculent.png'
 
 let plantCards = [
     {
@@ -58,9 +58,9 @@ function myServices(){
              return (
                     <div key={id} className="col-xs-12 col-sm-6 col-md-4">
                         <div className="single-services text-center wow fadeInDown" data-wow-delay="0.2s">
-                            <div className="services-icon">
-                                <i className="fa fa-users"></i>
-                            </div>
+                            <img src={potted} className="services-icon">
+                                {/* <i className="fa fa-users"></i> */}
+                            </img>
                             <div className="services-content">
                                 <h3>{name}</h3> 
                             </div>
