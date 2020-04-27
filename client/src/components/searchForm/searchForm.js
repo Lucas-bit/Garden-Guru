@@ -12,7 +12,7 @@ function Searchform(props) {
     <React.Fragment>
     <div className= "card-and-title-container col-xs-12 col-sm-12 col-md-12">
         <div className= "card-title">
-            <h1 className = 'search-title'><span><img className ="search-logo" src={Logo}/></span>SEARCH PLANTS<span><img className ="search-logo" src={Logo}/></span></h1>
+            <h1 className = 'search-title'><span><img className ="search-logo" src={Logo} alt="Succulent Logo"/></span>SEARCH PLANTS<span><img className ="search-logo" src={Logo}alt="Succulent Logo"/></span></h1>
             <div className= "welcome-container">
                 <form className = "search-form">
                         <div className="inner-form"> 

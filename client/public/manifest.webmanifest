@@ -1,5 +1,9 @@
 {
- "name": "App",
+ "name": "Garden Guru",
+ "short_name": "G G",
+ "start_url": "/mygarden",
+ "background_color": "palegoldenrod",
+ "display": "fullscreen",
  "icons": [
   {
    "src": "\/android-icon-36x36.png",
