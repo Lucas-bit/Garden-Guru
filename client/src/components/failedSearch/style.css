@@ -31,3 +31,45 @@ font-size: 15rem;
 color: palegoldenrod
 }
 
+
+@media only screen and (max-width: 1024px) {
+
+.four-0-four-logo{  
+  width: 24.5%;
+  vertical-align: baseline;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+
+.four-0-four-logo{  
+  width: 30.5%;
+  vertical-align: baseline;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+
+.four-0-four-logo{  
+  vertical-align: baseline;
+  }
+
+.number4{
+  font-size: 7rem;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+
+.return-button{
+  width: 100%;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+
+.four-0-four-logo{
+  width: 40.5%;
+  }
+}
+

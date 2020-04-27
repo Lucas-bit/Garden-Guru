@@ -15,7 +15,6 @@ import failedSearch from './pages/FailedSearch/FailedSearch'
 
 function App() {
   return (
-    <div>
       <React.Fragment>
         <Router>
           <Switch>
@@ -29,7 +28,6 @@ function App() {
           </Switch>
         </Router>
       </React.Fragment>
-    </div>
   );
 }
 
