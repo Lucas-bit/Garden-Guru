@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Searchform from '../../components/SearchForm'
+import Searchform from '../../components/searchForm/index'
 import SearchResults from '../../components/SearchCards/index';
 import Hamburger from '../../components/Hamburger/index'
 import { Row } from '../../components/Grid';
