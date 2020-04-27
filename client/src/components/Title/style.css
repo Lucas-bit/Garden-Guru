@@ -30,6 +30,17 @@
     }
 }
 
+@media only screen and (max-width: 768px){
+    .gg-title{
+        font-size: 175%;
+        margin-left: 37.5%;
+    }
+
+    .title-logo{
+      width: 9%;
+    }
+}
+
 @media only screen and (max-width: 688px) {
     .gg-title{
         font-size: 190%;
@@ -39,6 +50,13 @@
 
     .title-logo{
         width: 7%
+    }
+}
+
+@media only screen and (max-width: 425px){
+    .gg-card-title{
+        margin-top: 3% !important;
+        margin-left: -.5%;
     }
 }
 

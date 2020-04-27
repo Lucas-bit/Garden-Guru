@@ -5,12 +5,10 @@ import { Row } from '../../components/Grid'
 
 function SignUp(){
     return(
-        <div>
             <Row>
                 <Register/>
                 <GrowPhoto/>
             </Row>
-        </div>
     )
 }
 

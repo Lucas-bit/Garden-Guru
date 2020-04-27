@@ -2,12 +2,31 @@ import React from "react";
 import { Row } from '../Grid';
 import './style.css'
 
+
+
 function SearchResults(props) {
 
   return (
-    <Row>
-      <div className="overflow-auto col-6 col-md-6">
-      { props.results ? props.results.map(item => (
+    <React.Fragment>
+<div id="services" className="services-area section-padding col-xs-12 col-sm-6 col-md-12">
+            <div className="container">
+                <div className="row">
+                    <div className="col-md-12">
+                        <div className="section-header">
+                            <p className="line1"></p>
+                            <p className="line2"></p>
+                        </div>
+                    </div>
+                </div>
+                  <div className= "row">
+                    <div className="col-xs-12 col-sm-6 col-md-12">
+                    { props.results && props.results.length > 0 
+                      ?  
+                      props.results[0] === "" 
+                      ? 
+                      <p></p> 
+                      : 
+       props.results.map(item => (
         <div key={item.id} className="card card-body">
           <div className="welcome-container">
             <h4>{item.common_name}</h4>
@@ -33,9 +52,15 @@ function SearchResults(props) {
                       }}>Add {item.common_name} to garden!</button>
           </div>
           </div>
-            )) : <li>No Results</li>}
-        </div>
-      </Row>
-  )};
+          <p className="no-results">Sorry we dont have that plant in our records yet, hopefully it will be added soon as our library is ever growing!</p>}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+      </React.Fragment>
+                    
+                      
+)};
 
     export default SearchResults;
+  

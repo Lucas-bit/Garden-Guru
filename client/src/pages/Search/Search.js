@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import Searchform from '../../components/SearchForm'
+import Searchform from '../../components/searchForm'
 import SearchResults from '../../components/SearchCards/index';
-import Hamburger from '../../components/Hamburger/index'
 import { Row } from '../../components/Grid';
+import Hamburger from '../../components/Hamburger/index';
 
 function Search() {
   const [search, setSearch] = useState("");
@@ -17,7 +17,7 @@ function Search() {
                 
     setSearch("")
     const key = "dFJuTGR0eWxpTTR5N2xXVTczWlMvZz09"
-    const APIurl = "https://cors-anywhere.herokuapp.com/https://trefle.io/api/species/?q="+term+"&token="+key
+    const APIurl = "https://cors-anywhere-guanaco.herokuapp.com/https://trefle.io/api/species/?q="+term+"&token="+key
     
     fetch(APIurl,{crossOrigin: true, origin: "http://localhost:3000"})
       .then(res => {
@@ -50,8 +50,7 @@ function Search() {
 
 
   return (
-    <div>
-      <Row>
+    <React.Fragment>
         <Hamburger />
         <Searchform
           handleFormSubmit={handleFormSubmit}
@@ -59,8 +58,7 @@ function Search() {
           term={search}
           />
         <SearchResults results={results} />
-      </Row>
-    </div>
+        </React.Fragment>
   )};
 
 export default Search;

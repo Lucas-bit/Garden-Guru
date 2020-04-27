@@ -81,11 +81,14 @@ body{
 }
 
 
+.services-area{
+    width: 100%;
+    margin: auto;
+}
+
 /* Mobile Section*/
 
 @media only screen and (max-width: 1024px) {
-    .bigContainer{
-    }
 
     .myGarden-title{
         font-size: 300%;
@@ -101,8 +104,7 @@ body{
    }
 
 @media only screen and (max-width: 788px) {
-    .bigContainer{
-    }
+    
 
     .myGarden-title{
         font-size: 300%;

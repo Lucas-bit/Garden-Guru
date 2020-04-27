@@ -7,13 +7,14 @@ import PrivateRoute from './lib/PrivateRoute'
 import Home from './pages/Home/Home';
 import Search from './pages/Search/Search';
 import Register from './pages/SignUp/signUp';
-import MyGarden from './pages/MyGarden/myGarden';
 import Logout from './components/Logout/index';
+import Invalid from './pages/Invalid/invalid'
+import MyGarden from './pages/MyGarden/myGarden';
+import failedSearch from './pages/FailedSearch/FailedSearch'
 
 
 function App() {
   return (
-    <div>
       <React.Fragment>
         <Router>
           <Switch>
@@ -22,10 +23,11 @@ function App() {
           <PrivateRoute path="/search" component={Search} />    
           <PrivateRoute path="/mygarden" component={MyGarden}/>
           <PrivateRoute path="/logout" component={Logout}/>
+          <Route path="/invalid" component={Invalid}/>  
+          <Route path="/*" component={failedSearch}/>
           </Switch>
         </Router>
       </React.Fragment>
-    </div>
   );
 }
 

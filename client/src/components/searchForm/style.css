@@ -1,60 +1,47 @@
-.card {
-    background-color: #639a67;
-    width: 80%;
-    margin-left: 8%;
-    margin-top: 0% !important;
-}
-
-.welcome-container{
+.search-title{
     text-align: center;
+    margin-top: 20px;
+
 }
 
-
-.btn{
-background-color: palegoldenrod;
-color: #c5464a !important;
+.search-logo{
+    width: 3.5%;
+    vertical-align: baseline;
 }
 
-.btn:hover{
-background-color: #c5464a;
-color: palegoldenrod;
-border-color: none !important;
+.search-group{
+    width: 50%;
+    margin: auto;
+    padding-left: 0.65%;
+
 }
 
-.card{
-   background-color: #639a67;
-   margin-top: 15%;
+#search-button{
+    background-color: #639a67 !important;
+    color: black !important
 }
 
-.btn-primary{
-    background-color: palegoldenrod;
-    border-color: #c5464a !important;
-}
-
-.btn-primary:hover {
-    color: palegoldenrod !important;
+#search-button:hover{
     background-color: #c5464a !important;
-    border-color: palegoldenrod !important;
+    color: palegoldenrod !important
 }
 
-.register-btn{
-    color: palegoldenrod;
-    margin-top: 0px !important;
+
+@media only screen and (max-width: 1024px) {
+.search-logo{
+        width: 4.5%
+    }
 }
 
-.card-and-title-container{
-        padding-right: 4%;
-        padding-left: 3%;
-        height: 200px;
+@media only screen and (max-width: 425px) {
+.search-logo{
+        width: 8.5%
+    }
 }
 
-.overflow-auto{
-    height:300px;
-    display: inline-block;
-}
-
-@media only screen and (max-width: 688px) {
-   .card-title{
-    margin-left: 11px;
-   }
-  }
+@media only screen and (max-width: 320px) {
+    .search-logo{
+        width: 7.5%;
+        vertical-align: inherit;
+        }
+    }

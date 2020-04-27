@@ -3,16 +3,22 @@
 }
 
 .header-nav{
-    margin-top: 0px !important
+    margin-top: 0px !important;
+    padding: 0px;
 }
 
 .container{
-    padding-left: 8px;
+    padding-left: 2px;
+    padding-right: 5px
 }
 
 .gg-logo{
     margin-left: 0px;
     margin-bottom: 4px;
+}
+
+a{
+    color: black
 }
 
 a:hover{
@@ -23,4 +29,5 @@ a:hover{
 .magnify {
     margin-left: 5px;
     margin-bottom: 6px;
+    color: black
 }

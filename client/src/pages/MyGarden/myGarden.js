@@ -37,11 +37,11 @@ export default class Home extends Component {
     let plants = this.state.plants
 
     return(
-                <Row>
+                <div>
                     <Hamburger/>
                     <p>Welcome to Home, { name }.</p>
 
                     <Cards plants={ plants } />
-                </Row>
+                </div>
     )
 }}
