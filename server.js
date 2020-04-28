@@ -1,75 +1,46 @@
-const express = require('express')
-const expressLayouts = require('express-ejs-layouts');
-const mongoose = require('mongoose');
-const passport = require('passport');
-const flash = require('connect-flash');
-const session = require('express-session');
-const app = express()
-const PORT = process.env.PORT || 3001
+// Common modules
+const path = require('path')
+// MongoDB
+const mongoose = require('mongoose')
 
-// Passport Config
-require('./config/passport')(passport);
-
-// DB Config
-const db = require('./config/keys').mongoURI;
-
-// Connect to MongoDB
 mongoose
   .connect(
-    db,
-    { useNewUrlParser: true }
-  )
-  .then(() => console.log('MongoDB Connected'))
-  .catch(err => console.log(err));
+    'mongodb+srv://alchemist:a5ZzeU0vf8r4ZZdO@cluster0-0zueo.mongodb.net/Garden-Guru?retryWrites=true&w=majority',
+   { useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true },()=>{
+    console.log(`🦢The Goose is loose 🦢`)
+   })
 
-// EJS
-app.use(expressLayouts);
-app.set('view engine', 'ejs');
+// Initializing Express
+const express = require('express'),
+      app = express(),
+      port = 4000
 
-// Express body parser
-app.use(express.urlencoded({ extended: true }));
+// Middlewares
+const bodyParser = require('body-parser'),
+      passportControl = require('./lib/passport-control')
 
-// Express session
-app.use(
-  session({
-    secret: 'secret',
-    resave: true,
-    saveUninitialized: true
-  })
-);
-
-// Passport middleware
-app.use(passport.initialize());
-app.use(passport.session());
-
-// Connect flash
-app.use(flash());
-
+app.use(bodyParser.urlencoded({ extended: true }))
+app.use(express.static(path.join(__dirname, 'public')))
+app.use(passportControl.initialize())
+app.use(express.json())
 // Global variables
-app.use(function(req, res, next) {
-  res.locals.success_msg = req.flash('success_msg');
-  res.locals.error_msg = req.flash('error_msg');
-  res.locals.error = req.flash('error');
-  console.log("req.session",req.session)
+app.use(function(_, res, next) {
   res.header("Access-Control-Allow-Origin", "http://localhost:3000");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   next();
 });
 
 // Routes
-app.use('/', require('./routes/index.js'));
-app.use('/users', require('./routes/users.js'));
-app.use('/api', require('./routes/API.js'));
+app.use('/', require('./routes'));
 
 
-// Define middleware here
-app.use(express.urlencoded({ extended: true }))
-app.use(express.json())
+// Run server
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'))
 }
 // Start the API server
-app.listen(PORT, function () {
-  console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`)
+app.listen(port, function () {
+  console.log(`🌷🌹🌻🌼🍁GARDEN GURU🍁🌼🌻🌹🌷`)
+  console.log(`now listening on PORT ${port}`)
 })
