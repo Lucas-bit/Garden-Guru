@@ -1,6 +1,8 @@
-import React from 'react';
+import React from "react";
 import Title from '../Title'
 import './style.css'
+
+
 
 
 function Searchform(props) {

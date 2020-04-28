@@ -65,6 +65,7 @@ function myServices(){
                                 <i className="fa fa-users"></i>
                             </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
                             <div className="row">
                                 {props.plants.map(({ _id, name, type, height }) => {
                                     return (
@@ -79,6 +80,10 @@ function myServices(){
                                             </div>
                                         </div>
                                             )})}
+=======
+                            <div className="services-content">
+                                <h3>{name}</h3> 
+>>>>>>> parent of ee20fe9a... adeed plants,name to mygarden
 =======
                             <div className="services-content">
                                 <h3>{name}</h3> 

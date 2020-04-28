@@ -28,8 +28,12 @@ function SearchResults(props) {
                       'Content-type': 'application/json'
                     }
                     })
+<<<<<<< HEAD
                     .then(alert(`Plant was added to your garden!`))
                     .catch(err=>{console.log(err)})
+=======
+                    .then(res=>{console.log(res)})
+>>>>>>> parent of ee20fe9a... adeed plants,name to mygarden
                       }}>Add {item.common_name} to garden!</button>
           </div>
           </div>
