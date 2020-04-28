@@ -1,7 +1,13 @@
 import React from "react";
+<<<<<<< HEAD:src/components/searchForm/index.js
 import Logo from '../../images/Garden-Guru-Transparent-Tiny.png'
 import {InputGroup, FormControl, Button } from 'react-bootstrap'
+=======
+import Title from '../Title'
+>>>>>>> parent of ee20fe9a... adeed plants,name to mygarden:src/components/searchForm/searchForm.js
 import './style.css'
+
+
 
 
 function Searchform(props) {

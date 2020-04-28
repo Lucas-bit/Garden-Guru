@@ -51,7 +51,7 @@ export default class Login extends Component {
             <h1>Login</h1>
             <form onSubmit={this.submit.bind(this)}>
             <div className="form-group">
-            <label htmlFor="email">Email: </label>
+            <label for="email">Email: </label>
             <input
                 type="email"
                 id="email"
@@ -60,7 +60,7 @@ export default class Login extends Component {
             />
             </div>
             <div className="form-group">
-            <label htmlFor="password">Password</label>
+            <label for="password">Password</label>
             <input
                 type="password"
                 id="password"

@@ -1,4 +1,4 @@
-import { Row } from '../../components/Grid'
+import { Col, Container, Row } from '../../components/Grid'
 import Cards from '../../components/GardenCards'
 import Hamburger from '../../components/Hamburger/index'
 import React, { Component } from 'react'
@@ -7,7 +7,7 @@ export default class Home extends Component {
 
   constructor(props) {
     super(props)
-    this.state = { name: "", plants: [] }
+    this.state = { user: "" }
   }
 
   componentDidMount() {
@@ -16,14 +16,14 @@ export default class Home extends Component {
         Authorization: 'Bearer ' + localStorage.getItem('token')
       }
     }).then(res => {
-      return res.json()
-      
+      console.log(res.json())
+    //   return res.json()
+    // }).then(user => {
+    //   
     }).then(user=>{
-      let name = user.name
-      let plants = user.plants
-      
-      this.setState({name: name, plants:plants})
-      
+      console.log(user)
+
+      this.setState(user[0].username)
     })
     .catch(err => {
       console.error(err)
@@ -33,15 +33,13 @@ export default class Home extends Component {
 
 
   render() {
-    let name = this.state.name
-    let plants = this.state.plants
-
+    let username = this.state.user.username
     return(
                 <Row>
                     <Hamburger/>
-                    <p>Welcome to Home, { name }.</p>
+                    <p>Welcome to Home, {username}.</p>
 
-                    <Cards plants={ plants } />
+                    <Cards />
                 </Row>
     )
 }}
