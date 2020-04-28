@@ -10,7 +10,37 @@ const plantCards = [
         height: '2 meters'
     },
 
-function myServices(props){
+    {
+        id: 2,
+        name: 'fern',
+        type: 'prehistoric',
+        height: '5 meters'
+    },
+    {
+        id: 3,
+        name: 'apple tree',
+        type: 'prehistoric',
+        height: '5 meters'
+    },
+    {
+        id: 4,
+        name: 'birch',
+        type: 'prehistoric',
+        height: '5 meters'
+    }
+   
+   
+]
+
+
+
+
+
+
+//create fake dataset from data that currently have then have ract build up the cards from the data set
+
+function myServices(){
+    return(
         <React.Fragment>
         <div className="bigContainer"   >
         <h1 className = 'myGarden-title'><span><img className ="myGarden-logo" src={Logo}/></span>MY GARDEN<span><img className ="myGarden-logo" src={Logo}/></span></h1>
