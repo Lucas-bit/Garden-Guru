@@ -1,9 +1,11 @@
-import React, {Component} from 'react'
+import React, {useState} from 'react'
 import './style.css'
 import Logo from '../../images/Garden-Guru-Transparent.png'
 import returnPlantCard from '../../components/Search/index'
 
-let plantCards = [
+function Garden(){
+
+    const cards = [
     {
         id: 1,
         name: 'tree',
@@ -29,18 +31,28 @@ let plantCards = [
         type: 'prehistoric',
         height: '5 meters'
     }
-]
+    ]
 
-plantCards.push(returnPlantCard)
-console.log(plantCards)
+    const [plantCards, setPlantCards] = useState(cards)
+
+//setPlantCards(returnPlantCard)
+
 
 
 
 
 
 //create fake dataset from data that currently have then have ract build up the cards from the data set
+ 
+const handleClick = (e)=>{
+  //  console.log(e.currentTarget.dataset.name)
+ const newCards = plantCards.filter(card => card.name !== e.currentTarget.dataset.name)
+setPlantCards(newCards)
+ 
+ console.log(newCards)   
+}
 
-function myServices(){
+
     return(
         <React.Fragment>
         <div className="bigContainer"   >
@@ -56,22 +68,22 @@ function myServices(){
                     </div>
                 </div>
                 <div className="row">
-        {plantCards.map(({id, name, type, height }) => {
-           
+                    
+         {plantCards.map(({id, name, type, height }) => {
              return (
-                {this.plantCards.list.map(id => (
                     <div key={id} className="col-xs-12 col-sm-6 col-md-4">
                         <div className="single-services text-center wow fadeInDown" data-wow-delay="0.2s">
                             <div className="services-icon">
                                 <i className="fa fa-users"></i>
                             </div>
                             <div className="services-content">
+                                <button onClick={handleClick} data-name = {name} className = "delete">X</button> 
                                 <h3>{name}</h3> 
                             </div>
                         </div>
                     </div>
-               ))}
-            )}
+             )} 
+             )}
                 </div>
             </div>
         </div>
@@ -80,4 +92,4 @@ function myServices(){
     )
 }
 
-export default myServices
+export default Garden
