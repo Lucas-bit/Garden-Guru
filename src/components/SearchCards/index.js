@@ -20,9 +20,9 @@ return (
                     { props.results && props.results.length > 0 
                       ?  
                       props.results[0] === "" 
-                      ? 
+                      ?
                       <p></p> 
-                      : 
+                      :
                       props.results.map(item => (
                       <div key={item.id} className="plant-card single-services text-center wow fadeInDown" data-wow-delay="0.2s">
                         <div className="services-content">

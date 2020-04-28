@@ -17,6 +17,7 @@
 .btn{
 background-color: palegoldenrod !important;
 color: #c5464a !important;
+width: 100%
 }
 
 .btn:hover{

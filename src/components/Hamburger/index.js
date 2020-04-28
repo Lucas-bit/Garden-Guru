@@ -73,7 +73,7 @@ render(){
                         My Garden
                   </MDBNavLink>
                 </MDBNavItem>
-                <MDBNavItem>
+                <MDBNavItem active>
                   <MDBNavLink to="/logout">
                   <img
                           alt=""

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Cards from '../../components/GardenCards'
 import Hamburger from '../../components/Hamburger/index'
+import './style.css'
 
 export default class Home extends Component {
 
@@ -38,9 +39,8 @@ export default class Home extends Component {
     return(
     <div>
         <Hamburger/>
-        <p>Welcome to Home, { name }.</p>
 
-        <Cards plants={ plants } />
+        <Cards plants={ plants } name={name} />
     </div>
     )
 }}

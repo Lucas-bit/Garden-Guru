@@ -2,6 +2,7 @@ import React from 'react'
 import './style.css'
 import Logo from '../../images/Garden-Guru-Transparent.png'
 import returnPlantCard from '../SearchCards/index'
+import potted from '../../images/pottedSucculent.png'
 
 function myServices(props){
 
@@ -10,7 +11,8 @@ return(
     <div className="bigContainer"   >
         <h1 className = 'myGarden-title'><span><img className ="myGarden-logo" src={Logo}/></span>MY GARDEN<span><img className ="myGarden-logo" src={Logo}/></span></h1>
         <div id="services" className="services-area section-padding">
-        
+        <p className="welcome-name">Welcome home, { props.name }</p>
+
         <div className="container">
             <div className="row">
                 <div className="col-md-12">
@@ -25,9 +27,7 @@ return(
                 return (
                 <div key={ _id } className="col-xs-12 col-sm-6 col-md-4">
                     <div className="single-services text-center wow fadeInDown" data-wow-delay="0.2s">
-                        <div className="services-icon">
-                            <i className="fa fa-users"></i>
-                        </div>
+                        <img src={potted} className="services-icon"/>
                         <div className="services-content">
                             <h3>{ name }</h3> 
                         </div>

@@ -87,7 +87,7 @@ export default class Login extends Component {
                                 placeholder="Enter Password"
                             />
                             </div>
-                            <input type="submit" value="Log in" />
+                            <input className="btn btn-primary" type="submit" value="Log in" />
                         </form>
                         <p className="lead mt-4 post-form">Dont Have An Account?</p>
                         <a className ="lead mt-4 post-form register-btn" href="/register">Register Here</a>
