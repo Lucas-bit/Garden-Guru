@@ -28,7 +28,8 @@ function SearchResults(props) {
                       'Content-type': 'application/json'
                     }
                     })
-                    .then(res=>{console.log(res)})
+                    .then(alert(`Plant was added to your garden!`))
+                    .catch(err=>{console.log(err)})
                       }}>Add {item.common_name} to garden!</button>
           </div>
           </div>
