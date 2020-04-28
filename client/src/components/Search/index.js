@@ -31,7 +31,7 @@ function SearchResults(props) {
     </div>
 </div> */}
 
-<div id="services" className="services-area section-padding col-xs-12 col-sm-6 col-md-12">
+<div id="services" className="services-area plant-response section-padding col-xs-12 col-sm-6 col-md-12">
             <div className="container">
                 <div className="row">
                     <div className="col-md-12">

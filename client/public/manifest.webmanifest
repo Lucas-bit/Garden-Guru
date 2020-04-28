@@ -1,7 +1,7 @@
 {
  "name": "Garden Guru",
  "short_name": "G G",
- "start_url": "/mygarden",
+ "start_url": "/",
  "background_color": "palegoldenrod",
  "display": "fullscreen",
  "icons": [
@@ -15,7 +15,7 @@
    "src": "\/android-icon-48x48.png",
    "sizes": "48x48",
    "type": "image\/png",
-   "density": "1.0"
+   "d
   },
   {
    "src": "\/android-icon-72x72.png",
