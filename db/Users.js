@@ -31,7 +31,6 @@ var userSchema = new mongoose.Schema({
     index: true,
     unique: true,
     minlength: 2,
-    maxlength: 16,
     lowercase: true,
     required: true,
   },

@@ -1,10 +1,6 @@
-import React from "react";
-import Logo from '../../images/Garden-Guru-Transparent-Tiny.png'
-import {InputGroup, FormControl, Button } from 'react-bootstrap'
+import React from 'react';
 import Title from '../Title'
 import './style.css'
-
-
 
 
 function Searchform(props) {
