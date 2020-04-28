@@ -12,18 +12,19 @@ const options = {
     toolTip: {
         shared: true
     },
-    data: [{
+    data: [
+        {
         type: 'spline',
         name: 'Water',
         showInLegend: true,
         dataPoints: [
-            { y: 1, label: 'Jan' },
-            { y: 3, label: 'Feb' },
-            { y: 4, label: 'Mar' },
-            { y: 2, label: 'Apr' },
-            { y: 5, label: 'May' },
-            { y: 9, label: 'Jun' },
-            { y: 15, label: 'Jul' },
+            { y: 6, label: 'Jan' },
+            { y: 12, label: 'Feb' },
+            { y: 3, label: 'Mar' },
+            { y: 11, label: 'Apr' },
+            { y: 9, label: 'May' },
+            { y: 5, label: 'Jun' },
+            { y: 2, label: 'Jul' },
             { y: 12, label: 'Aug' },
             { y: 4, label: 'Sept' },
             { y: 0, label: 'Oct' },

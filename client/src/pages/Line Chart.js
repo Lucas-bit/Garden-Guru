@@ -4,11 +4,12 @@ import CanvasJSReact from '../assets/canvasjs.react'
 import axios from 'axios'
 import options from './testData'
 
+
 var CanvasJS = CanvasJSReact.CanvasJS
 var CanvasJSChart = CanvasJSReact.CanvasJSChart
 
 class Chart extends Component {
-constructor(){
+  constructor( ){
   super();
   this.state={
     options:options
@@ -22,18 +23,20 @@ constructor(){
     // this.setState({ options: response.data })
     console.log(response)
     })
+
+   
   }
 
   render() {
 
     return (
-      <React.Fragment>
+  
         <div>
-          <div style={{ width: '50%' }}>
-            <CanvasJSChart options={this.state.options} style={{ width: '50%' }} />
+          <div style={{ width: '50%', marginLeft: "25%", marginRight: "25%" }}>
+            <CanvasJSChart options={this.props.options} />
           </div>
         </div>
-      </React.Fragment>
+    
     )
   }
 }
