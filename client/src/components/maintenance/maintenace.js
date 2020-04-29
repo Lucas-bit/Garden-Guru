@@ -1,7 +1,7 @@
 /*eslint-disable */
 
 import React from 'react'
-import { DropdownButton, Dropdown, Col, Row, Alert } from 'react-bootstrap'
+import { DropdownButton, Dropdown, Col, Row } from 'react-bootstrap'
 import Chart from '../../pages/Line Chart'
 import axios from 'axios';
 import moment from 'moment';
@@ -50,7 +50,6 @@ class Maintenance extends React.Component {
           type:
             "spline"
 
-
         },
         {
           dataPoint: [],
@@ -74,7 +73,7 @@ class Maintenance extends React.Component {
 
 
         }]
-
+        // gets month and add to the count
         parsedArr.forEach(element => {
 
           var type = element.type
@@ -107,73 +106,36 @@ class Maintenance extends React.Component {
           }
 
 
-          //   if (count[element.month] && count[element.month].type === 'water') {
-
-          //     switch (element.type) {
-          //       case 'water':
-          //         count[element.month].waterCount++;
-          //         break;
-          //       case 'prune':
-          //         count[element.month].pruneCount++;
-          //         break;
-          //       case 'weed':
-          //         count[element.month].weedCount++;
-          //         break;
-          //     }
-
-
-          //   } else {
-
-
-          //     switch (element.type) {
-          //       case 'water':
-          //         count[element.month] = {};
-          //         count[element.month].waterCount = 1;
-          //         break;
-          //       case 'prune':
-          //         count[element.month] = {};
-          //         count[element.month].pruneCount = 1;
-          //         break;
-          //       case 'weed':
-          //         count[element.month] = {};
-          //         count[element.month].weedCount = 1;
-          //         break;
-
-          //     }
-          //   }
-
         });
 
-        // var d = new Date().setMonth(month)
-        // var m = d.getMonth()
-        // var m;
-
-        var d = new Date();
-        var m = d.setMonth(d.getMonth(), 0);
-        var m;
-
+        //pushing data to chart (not pushing)
         for (var month in count) {
-          if (month === 3) {
+          var d = new Date();
+          d.setMonth(month);
+          var m = d.getMonth()
+          console.log(m)
+          if (month == 4) {
             m = 'April'
           }
+
           data[0].dataPoint.push({
-            label: m,  x: 0,   y: count[month].waterCount
-          })
-          data[1].dataPoint.push({
-            label: month,
-            x: 0,
-            y: count[month].weedCount
-          })
-          data[2].dataPoint.push({
-            label: month,
-            x: 0,
-            y: count[month].pruneCount
-          })
+            label: m, x: parseInt(month), y: count[month].waterCount
+          }),
+            data[1].dataPoint.push({
+              label: m,
+              x: parseInt(month),
+              y: count[month].weedCount
+            }),
+            data[2].dataPoint.push({
+              label: m,
+              x: parseInt(month),
+              y: count[month].pruneCount
+            })
         }
         console.log(count)
 
         console.log(data)
-        this.setState({ options: { ...this.state.options,data } })
+        this.setState({ options: { ...this.state.options, data } })
       })
   }
 
@@ -204,10 +166,7 @@ class Maintenance extends React.Component {
 
             <DropdownButton id="dropdown-basic-button" title="Water" >
               <Dropdown.Item onClick={() => this.addEntry("water")} href="#/action-1">Water Completed</Dropdown.Item>
-              {/* <Alert color="success">
-                This is a success alert
-              </Alert> */}
-              <Dropdown.Item href="#/action-2">Opps Delete</Dropdown.Item>
+                {/* <Dropdown.Item href="#/action-2">Opps Delete</Dropdown.Item> */}
 
             </DropdownButton>
 
@@ -215,7 +174,7 @@ class Maintenance extends React.Component {
 
             <DropdownButton id="dropdown-basic-button" title="Weed">
               <Dropdown.Item onClick={() => this.addEntry('weed')} href="#/action-1">Weeding Completed</Dropdown.Item>
-              <Dropdown.Item href="#/action-2">Delete</Dropdown.Item>
+                  {/* <Dropdown.Item href="#/action-2">Delete</Dropdown.Item> */}
 
             </DropdownButton>
 
@@ -223,7 +182,7 @@ class Maintenance extends React.Component {
 
             <DropdownButton id="dropdown-basic-button" title="Prune">
               <Dropdown.Item onClick={() => this.addEntry("prune")} href="#/action-1">Pruning Completed</Dropdown.Item>
-              <Dropdown.Item href="#/action-2">Delete</Dropdown.Item>
+                {/* <Dropdown.Item href="#/action-2">Delete</Dropdown.Item> */}
 
             </DropdownButton>
           </Row>

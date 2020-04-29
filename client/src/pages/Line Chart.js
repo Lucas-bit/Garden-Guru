@@ -5,7 +5,7 @@ import axios from 'axios'
 import options from './testData'
 
 
-var CanvasJS = CanvasJSReact.CanvasJS
+// var CanvasJS = CanvasJSReact.CanvasJS
 var CanvasJSChart = CanvasJSReact.CanvasJSChart
 
 class Chart extends Component {
