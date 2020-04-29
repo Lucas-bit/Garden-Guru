@@ -8,6 +8,7 @@ function Search() {
   const [search, setSearch] = useState("");
   const [results, setResults] = useState([]);
   const [term, setTerm] = useState("");
+  
 
   // When the component mounts, update the title to be Wikipedia Searcher
   useEffect(() => {
@@ -23,9 +24,11 @@ function Search() {
       .then(res => {
         res.json()
           .then(resp => {
-            let plantArr = resp
-            setResults(plantArr)
-
+          if(resp.length === 0){
+            setResults("none")
+          } else {
+            setResults(resp)
+          }
           })
           .catch(err => { throw err })
       }, [results])
@@ -40,7 +43,12 @@ function Search() {
 
   const handleFormSubmit = event => {
     event.preventDefault();
-    setTerm(search)
+    // if(search==="lion king"){
+    //   setResults("none")
+    // } else{
+      setTerm(search)
+    // }
+   
   };
 
 

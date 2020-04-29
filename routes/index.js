@@ -35,6 +35,7 @@ router.post('/login', passport.authenticate('local', {
   res.json({token: token})
 })
 
+
 // Return user data
 router.get('/mygarden', passport.authenticate('jwt', {
   session: false
@@ -63,7 +64,6 @@ router.get('/api/user', passport.authenticate('jwt', {
   const user = req.user
   User.find({ username : user.username }).then(response=>{return response})
   res.send(user)
-
 })
 
 
@@ -74,7 +74,7 @@ router.post("/api", passport.authenticate('jwt', {
 }), (req, res) => {
   if ( !req.user ) {
     alert("No User")
-  }
+  } 
   const plant = req.body
   const query = { username: req.user.username }
     User.findOneAndUpdate(query,
