@@ -3,7 +3,9 @@
     margin: auto;
 }
 
-
+.response-container{
+    width: 75% !important;
+}
 .common-name{
     text-transform: capitalize;
 }

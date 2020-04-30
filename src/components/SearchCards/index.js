@@ -8,7 +8,7 @@ console.log(res);
 
   return (
     <React.Fragment>
-      <div id="services" className="services-area section-padding col-xs-12 col-sm-6 col-md-12">
+      <div id="services" className="services-area response-container section-padding col-xs-12 col-sm-6 col-md-12">
         <div className="container">
           <div className="row">
             <div className="col-md-12">
@@ -44,7 +44,7 @@ console.log(res);
                                 'Content-type': 'application/json'
                               }
                             })
-                              .then(alert(`Plant was added to your garden!`))
+                              .then(alert(`${item.scientific_name} was added to your garden!`))
                               .catch(err => { console.log(err) })
                           }}>Add {item.common_name} to my garden!</button>
                       </div>
