@@ -39,7 +39,6 @@ export default class Home extends Component {
     return(
     <div>
         <Hamburger/>
-
         <Cards plants={ plants } name={name} />
     </div>
     )
