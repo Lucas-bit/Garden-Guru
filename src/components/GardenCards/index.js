@@ -6,6 +6,24 @@ import potted from '../../images/pottedSucculent.png'
 
 function myServices(props){
 
+    
+    
+const [plantCards, setPlantCards] = useState(cards)
+
+    //setPlantCards(returnPlantCard)
+
+
+//create fake dataset from data that currently have then have ract build up the cards from the data set
+
+const handleClick = (e)=>{
+//  console.log(e.currentTarget.dataset.name)
+const newCards = plantCards.filter(card => card.name !== e.currentTarget.dataset.name)
+setPlantCards(newCards)
+
+console.log(newCards)   
+}
+
+
 return(
 <React.Fragment>
     <div className="bigContainer"   >
@@ -29,6 +47,7 @@ return(
                     <div className="single-services text-center wow fadeInDown" data-wow-delay="0.2s">
                         <img src={potted} className="services-icon"/>
                         <div className="services-content">
+                        <button onClick={handleClick} data-name = {name} className = "delete">X</button> 
                             <h3>{ name }</h3> 
                         </div>
                     </div>
