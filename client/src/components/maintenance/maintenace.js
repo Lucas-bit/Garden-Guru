@@ -8,9 +8,12 @@ import moment from 'moment';
 import options from '../../pages/testData';
 
 
+
 class Maintenance extends React.Component {
   constructor() {
     super()
+
+    this.chart = React.createRef();
     this.state = {
       options
     }
@@ -23,7 +26,10 @@ class Maintenance extends React.Component {
       })
   }
 
+
   componentDidMount() {
+
+   
     // intial call to db on page load to retreive all entries
     axios.get('/api/maintenance')
       .then(data => {
@@ -31,7 +37,7 @@ class Maintenance extends React.Component {
         let parsedArr = data.data.map(entry => {
           console.log(entry.date)
           let month = moment(entry.data).format('M');
-          console.group(month)
+         // console.group(month)
 
           return {
             type: entry.type,
@@ -40,9 +46,24 @@ class Maintenance extends React.Component {
         })
 
         console.log(parsedArr)
-        var count = {}
+        var count = {
+          0: {},
+          1: {},
+          2:{},
+          3:{},
+          4:null,
+          5:{},
+          6:{},
+          7:{},
+          8:{},
+          9:{},
+          10:{},
+          11:{},
+        }
         var data = [{
-          dataPoint: [],
+          dataPoints: [
+
+          ],
           name:
             "Water",
           showInLegend:
@@ -52,7 +73,11 @@ class Maintenance extends React.Component {
 
         },
         {
-          dataPoint: [],
+          dataPoints: [
+
+
+            
+          ],
           name:
             "Weed",
           showInLegend:
@@ -60,10 +85,9 @@ class Maintenance extends React.Component {
           type:
             "spline"
 
-
         },
         {
-          dataPoint: [],
+          dataPoints: [],
           name:
             "Prune",
           showInLegend:
@@ -114,34 +138,77 @@ class Maintenance extends React.Component {
           d.setMonth(month);
           var m = d.getMonth()
           console.log(m)
-          if (month == 4) {
-            m = 'April'
+console.log('month: ', month)
+month = parseInt(month)
+          switch(month){
+            case 1:
+              m = 'Jan';
+              break;
+            case 2:
+              m = 'Feb';
+              break;
+            case 3:
+              m = 'Mar';
+              break;
+            case 4:
+              m = 'Apr';
+               break;
+            case 5:
+              m = 'May';
+              break;
+            case 6:
+              m = 'Jun'
+              break;
+            case 7:
+              m = 'Jul';
+              break;
+            case 8:
+              m = 'Aug';
+              break;
+            case 9:
+              m = 'Sep';
+              break;
+            case 10:
+              m = 'Oct';
+              break;
+            case 11:
+              m = 'Nov'
+              break;
+            case 12:
+              m = 'Dec';
+              break;
           }
+          
+          console.log('m: ', m)
 
-          data[0].dataPoint.push({
-            label: m, x: parseInt(month), y: count[month].waterCount
-          }),
-            data[1].dataPoint.push({
+          data[0].dataPoints.push({
+            label: m, x: parseInt(month), y: count[month].waterCount || null
+          })
+
+            data[1].dataPoints.push({
               label: m,
               x: parseInt(month),
-              y: count[month].weedCount
-            }),
-            data[2].dataPoint.push({
+              y: count[month].weedCount || null
+            })
+
+            data[2].dataPoints.push({
               label: m,
               x: parseInt(month),
-              y: count[month].pruneCount
+              y: count[month].pruneCount || null
             })
         }
         console.log(count)
 
         console.log(data)
-        this.setState({ options: { ...this.state.options, data } })
+        this.setState({ options: { ...this.state.options,  data } })
       })
   }
 
   render() {
     return (
 
+
+      
       <div className="wrapper">
 
 
@@ -190,8 +257,9 @@ class Maintenance extends React.Component {
         </Row>
         <br />
 
-        <Chart options={this.state.options} />
-
+        <Chart options={this.state.options} 
+          onRef={ref =>this.char = ref}/>
+     
       </div>
     )
   }
