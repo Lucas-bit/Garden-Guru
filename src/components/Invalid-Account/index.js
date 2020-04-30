@@ -63,7 +63,7 @@ export default class Login extends Component {
                 <Title/>
                     <div className="card card-body">
                         <div className="welcome-container">
-                            <h2 className="welcome">Woops!!</h2>
+                            <h2 className="welcome">Whoops!!</h2>
                             <p className="paragraph">It doesnt look like we don't have your account on file or you may have entered in the wrong email or password, please try again or sign up below! </p>
                         </div>
                         <form onSubmit={this.submit.bind(this)}>
