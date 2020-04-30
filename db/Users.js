@@ -67,10 +67,15 @@ userSchema.methods.login = function(password) {
   return new Promise((resolve, reject) => {
     bcrypt.compare(password, user.password, (err, result) => {
       if ( err ) { reject(err) }
+      
+      else if ( result === false ) {
+        reject()
+      }
       resolve()
     })
   })
 }
+
 
 // Export Mongoose "User" model
 module.exports = mongoose.model('User', userSchema)

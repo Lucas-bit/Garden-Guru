@@ -29,9 +29,16 @@ export default class Login extends Component {
         method: 'POST',
         body: params
     }).then( (res) => {
-        console.log(res)
+        console.log("stage 1")
+        if ( res.status === 401 ) {
+          return false
+        }
         return res.json()
     }).then(data => {
+        console.log(data)
+        if (data === false) {
+        return this.setState({loggedin: false})
+        }
         localStorage.setItem('token', data.token)
         this.setState({loggedin: true})
     }).catch( (err) => {
@@ -45,6 +52,15 @@ export default class Login extends Component {
         <Redirect
             to={{
             pathname: '/mygarden',
+            state: { from: this.props.location }
+            }}
+        />
+        )
+    } else if ( this.state.loggedin === false) {
+        return (
+        <Redirect
+            to={{
+            pathname: '/invalid',
             state: { from: this.props.location }
             }}
         />
@@ -66,7 +82,7 @@ export default class Login extends Component {
                             <h2 className="welcome">Welcome!</h2>
                             <p className="paragraph">Login to begin exploring plants, adding them to your garden,  and keeping track of their care and growth! </p>
                         </div>
-                    <form onSubmit={this.submit.bind(this)}>
+                    <form onSubmit={ this.submit.bind(this) }>
                     <div className="form-group">
                       <label htmlFor="email">Email</label>
                       <input
