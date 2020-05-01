@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useReducer } from 'react'
 import './style.css'
 import Logo from '../../images/Garden-Guru-Transparent.png'
 import returnPlantCard from '../SearchCards/index'
@@ -8,7 +8,7 @@ function myServices(props){
 
     
     
-const [plantCards, setPlantCards] = useState(cards)
+const plantCards = props.plants
 
     //setPlantCards(returnPlantCard)
 
@@ -17,10 +17,16 @@ const [plantCards, setPlantCards] = useState(cards)
 
 const handleClick = (e)=>{
 //  console.log(e.currentTarget.dataset.name)
+let data = e.target.dataset.id
 const newCards = plantCards.filter(card => card.name !== e.currentTarget.dataset.name)
-setPlantCards(newCards)
-
-console.log(newCards)   
+fetch(`/api/plant/${data}`, {
+    params: data,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Bearer ' + localStorage.getItem('token')
+    }
+  })
+.then(alert("DELETED"))
 }
 
 
@@ -47,7 +53,7 @@ return(
                     <div className="single-services text-center wow fadeInDown" data-wow-delay="0.2s">
                         <img src={potted} className="services-icon"/>
                         <div className="services-content">
-                        <button onClick={handleClick} data-name = {name} className = "delete">X</button> 
+                        <button onClick={handleClick} data-name = {name} data-id = {_id} className = "delete">X</button> 
                             <h3>{ name }</h3> 
                         </div>
                     </div>

@@ -30,7 +30,24 @@ export default class Home extends Component {
       })
     }
   
-  
+    componentDidUpdate() {
+      fetch('/api/user', {
+        headers: {
+          Authorization: 'Bearer ' + localStorage.getItem('token')
+        }
+      }).then(res => {
+        return res.json()
+        
+      }).then(user=>{
+        let plants = user.plants
+        
+        this.setState({ plants:plants})
+        
+      })
+      .catch(err => {
+        console.error(err)
+      })
+    }
   
     render() {
       let name = this.state.name
