@@ -1,30 +1,13 @@
+/*eslint-disable */
 const express = require('express'),
-      passport = require('passport'),
-      jwt = require('jsonwebtoken'),
-      User = require('../db/Users'),
-      router = express.Router()
+  passport = require('passport'),
+  jwt = require('jsonwebtoken'),
+  User = require('../db/Users'),
+  router = express.Router()
 
 /* API entrypoints */
-router.delete('/api/plant/:id', passport.authenticate('jwt', {
-  session: false
-}), (req, res) => {
-  if ( !req.user ) {
-    alert("No User")
-  } 
-  const query = { username: req.user.username }
-  User.updateOne(query,
-    { $pull: 
-      { plants: {_id: req.params.id}}},
-    (err,res)=>{
-      if (err) {console.log(err)}
-
-      console.log("Deleted plant!")  
-  })
-  res.status(200)
-})
 // Singup
 router.post('/register', (req, res) => {
-  console.log(req.body)
   var user = new User({
     name: req.body.name,
     username: req.body.email,
@@ -34,8 +17,8 @@ router.post('/register', (req, res) => {
   user.save().then(() => {
 
     // Token
-    const token = jwt.sign({id: user.id}, 'jwt_secret')
-    res.json({token:token})
+    const token = jwt.sign({ id: user.id }, 'jwt_secret')
+    res.json({ token: token })
 
   }).catch((err) => {
     console.error(err)
@@ -48,8 +31,8 @@ router.post('/login', passport.authenticate('local', {
   session: false
 }), (req, res) => {
   // Token
-  const token = jwt.sign({id: req.user.id}, 'jwt_secret')
-  res.json({token: token})
+  const token = jwt.sign({ id: req.user.id }, 'jwt_secret')
+  res.json({ token: token })
 })
 
 
@@ -57,7 +40,7 @@ router.post('/login', passport.authenticate('local', {
 router.get('/mygarden', passport.authenticate('jwt', {
   session: false
 }), (req, res) => {
-  if ( !req.user ) {
+  if (!req.user) {
     res.json({
       username: 'nobody'
     })
@@ -72,14 +55,13 @@ router.get('/mygarden', passport.authenticate('jwt', {
 router.get('/api/user', passport.authenticate('jwt', {
   session: false
 }), (req, res) => {
-  console.log(req.user)
-  if ( !req.user ) {
+  if (!req.user) {
     res.json({
       username: 'nobody'
     })
   }
   const user = req.user
-  User.find({ username : user.username }).then(response=>{return response})
+  User.find({ username: user.username }).then(response => { return response })
   res.send(user)
 })
 
@@ -89,27 +71,57 @@ router.get('/api/user', passport.authenticate('jwt', {
 router.post("/api", passport.authenticate('jwt', {
   session: false
 }), (req, res) => {
-  if ( !req.user ) {
+  if (!req.user) {
     alert("No User")
-  } 
+  }
   const plant = req.body
   const query = { username: req.user.username }
-    User.findOneAndUpdate(query,
-      { $push: 
-        { plants: {
-            name:plant.name,
-            plant_id:plant.id,
-            scientific_name:plant.scientific
-            }}},
-      {safe: true, new : true},(err,res)=>{
-        if (err) {console.log(err)}
+  User.findOneAndUpdate(query,
+    {
+      $push:
+      {
+        plants: {
+          name: plant.name,
+          plant_id: plant.id,
+          scientific_name: plant.scientific
+        }
+      }
+    },
+    { safe: true, new: true }, (err, res) => {
+      if (err) { console.error(err) }
 
-        console.log("Added plant!")
-        
+      console.log("Added plant!")
+
     })
+})
+
+// route for maintenance
+router.post("/api/maintenance", passport.authenticate('jwt', {
+  session: false
+}), (req, res) => {
+
+  if (!req.user) {
+    alert("No User")
+  }
+  const query = { username: req.user.username }
+  const entry = req.body.type
+
+  User.findOneAndUpdate(query,
+    {
+      $push:
+      {
+        maintenance: {
+          type: entry
+        }
+      }
+    },
+    { safe: true, new: true }, (err, res) => {
+      if (err) { console.log(err) }
+
+      console.log("Added maintenance!")
+
     })
+  })
 
 
-
-
-module.exports = router
+  module.exports = router

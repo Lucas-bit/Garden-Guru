@@ -1,8 +1,9 @@
+/*eslint-disable*/
 const mongoose = require('mongoose'),
-      bcrypt = require('bcrypt')
+  bcrypt = require('bcrypt')
 
 
-      const PlantSchema = new mongoose.Schema({
+const PlantSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true
@@ -19,6 +20,17 @@ const mongoose = require('mongoose'),
     default: Date.now
   }
 });
+
+const MaintenanceSchema = new mongoose.Schema({
+  type: {
+    type: String,
+    required: true
+  },
+  date: {
+    type: Date,
+    default: Date.now
+  }
+})
 
 // Mongoose Model
 var userSchema = new mongoose.Schema({
@@ -42,15 +54,18 @@ var userSchema = new mongoose.Schema({
     type: Date,
     default: Date.now
   },
-  plants: [PlantSchema]
+  plants: [PlantSchema],
+  maintenance: [MaintenanceSchema]
+
+
 });
 
 // Hash password before saving
-userSchema.pre('save', function(next) {
+userSchema.pre('save', function (next) {
   var user = this
 
   // If not registration
-  if ( !user.isModified('password') ) return next()
+  if (!user.isModified('password')) return next()
 
   bcrypt.hash(user.password, 10, (err, hash) => {
     if (err) {
@@ -61,14 +76,16 @@ userSchema.pre('save', function(next) {
   })
 })
 
+
+
 // Password verification
-userSchema.methods.login = function(password) {
+userSchema.methods.login = function (password) {
   var user = this
   return new Promise((resolve, reject) => {
     bcrypt.compare(password, user.password, (err, result) => {
-      if ( err ) { reject(err) }
-      
-      else if ( result === false ) {
+      if (err) { reject(err) }
+
+      else if (result === false) {
         reject()
       }
       resolve()

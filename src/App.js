@@ -10,6 +10,7 @@ import Invalid from './pages/Invalid/invalid'
 import MyGarden from './pages/MyGarden/myGarden';
 import failedSearch from './pages/FailedSearch/FailedSearch'
 import Logout from './components/Logout/index';
+import Maintenance from './pages/Maintenance/maintenance';
 
 
 function App() {
@@ -24,7 +25,7 @@ function App() {
           <PrivateRoute path="/search" component={Search} />    
           <PrivateRoute path="/mygarden" component={MyGarden}/>
           <PrivateRoute path="/logout" component={Logout}/>
- 
+          <PrivateRoute path="/maintenance" component={Maintenance}/>
           <Route path="/*" component={failedSearch}/>
           </Switch>
         </Router>
