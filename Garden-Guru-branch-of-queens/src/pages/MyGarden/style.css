@@ -1,0 +1,22 @@
+.welcome-name{
+    width: 33%;
+    margin: auto;
+    text-align: center;
+    background-color: #639a67;
+    color: black;
+    border-radius: 10px;
+}
+
+@media only screen and (max-width: 768px) {
+    .welcome-name{
+        width: 43.5%
+    }
+    }
+
+    @media only screen and (max-width: 425px) {
+        .welcome-name{
+            width: 95.5%;        }
+        }
+    
+    
+    

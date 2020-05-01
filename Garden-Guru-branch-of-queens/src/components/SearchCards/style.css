@@ -1,0 +1,48 @@
+.services-area{
+    width: 45%;
+    margin: auto;
+}
+
+.response-container{
+    width: 75% !important;
+}
+.common-name{
+    text-transform: capitalize;
+}
+
+.add-button{
+
+    display: block;
+    height: fit-content;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    background-color: palegoldenrod !important;
+    color: #c5464a !important; 
+    border: none;
+    width: 40%;
+    text-align: center;
+    margin: auto;
+    cursor: pointer;
+
+
+}
+
+.add-button:hover{
+    background-color: #639a67 !important;
+    border: palegoldenrod solid 1px !important;
+    color: palegoldenrod !important
+    }
+
+.no-results{
+margin: auto;
+text-align: center;
+}
+

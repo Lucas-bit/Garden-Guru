@@ -1,0 +1,167 @@
+.body{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.card {
+    background-color: #639a67 !important;
+    width: 80%;
+    margin-left: 8%;
+    margin-top: 0% !important;
+}
+
+.welcome-container{
+    text-align: center;
+}
+
+
+.btn{
+background-color: palegoldenrod !important;
+color: #c5464a !important;
+width: 100%
+}
+
+.btn:hover{
+background-color: #c5464a;
+color: palegoldenrod;
+border-color: none !important;
+}
+
+.card{
+   background-color: #639a67;
+   margin-top: 15%;
+}
+
+.btn-primary{
+    background-color: palegoldenrod;
+    border-color: #c5464a !important;
+}
+
+.btn-primary:hover {
+    color: palegoldenrod !important;
+    background-color: #c5464a !important;
+    border-color: palegoldenrod !important;
+}
+
+.register-btn{
+    color: palegoldenrod;
+    margin-top: 0px !important;
+}
+
+.card-and-title-container{
+        padding-right: 4%;
+        padding-left: 3%;
+}
+
+
+.gg-card-title{
+    margin-top: 10%;
+}
+
+.succulent-photo{
+    width: 100%;
+    height: 100%;
+    display: initial;
+}
+
+@media only screen and (max-width: 1024px) {
+
+
+    .card-and-title-container{
+        margin: 0%;
+        padding: 0%;
+    }
+
+    .gg-card-title{
+        font-size: large;
+        margin-top: 5%;
+    }
+
+    .welcome {
+        font-size: x-large;
+    }
+
+    .form-control{
+        font-size: initial ;
+    }
+    .post-form{
+        font-size: initial;
+    }
+
+    .btn{
+        font-size: initial;
+    }
+    
+}
+
+
+@media only screen and (max-width: 768px) {
+    .succulent-photo {
+        display: none
+    }
+
+    .card{
+        width: 90%;
+        margin-left: 40%;
+        margin-bottom: 20px;
+    }
+
+    .gg-card-title{
+        margin-top: 3%
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    .card{
+        margin-left: 11%;
+        width: 80%
+
+    }
+}
+
+@media only screen and (max-width: 688px) {
+   
+    /* .card {
+        margin-left: 10%;
+    }
+
+    .card-title{
+    margin-left: 11px;
+   } */
+
+   .gg-title{
+    font-size: 225%;
+    padding-right: 0px;
+    margin-left: 0%;
+    margin-top: 0% !important;
+   }
+
+   .gg-card-title{
+    margin-bottom: 20px;
+    font-size: small;
+   }
+
+   .succulent-photo{
+    width: 0px;
+  }
+
+  .gg-card-title{
+    font-size: small;
+    margin-top: 8%;
+}
+
+  .welcome {
+    font-size: large;
+    }
+    
+  .form-control{
+    font-size: small ;
+    }
+
+  .post-form{
+    font-size: small;
+    }
+
+  .btn{
+    font-size: small;
+    }
+}
