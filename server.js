@@ -64,22 +64,22 @@ app.put("/markread/:id", (req, res) => {
 });
 
 // Mark a book as having been not read
-app.put('/api/maintenance', (req, res) => {
-  console.log(req.params.id)
-  console.log(req.body)
+// app.put('/api/maintenance', (req, res) => {
+//   console.log(req.params.id)
+//   console.log(req.body)
 
-  // call database and update a maintenance
-  maintenance
-    .update({ _id: req.params.id }, { $push: { maintenance: req.body } })
-    .then(response => {
-      console.log(response)
-      res.json(response)
-    })
-     .catch(err => {
-      console.log(err)
-      res.status(400).json(err)
-    })
-})
+//   // call database and update a maintenance
+//   maintenance
+//     .update({ _id: req.params.id }, { $push: { maintenance: req.body } })
+//     .then(response => {
+//       console.log(response)
+//       res.json(response)
+//     })
+//      .catch(err => {
+//       console.log(err)
+//       res.status(400).json(err)
+//     })
+// })
 
 // route for maintenance
 app.get('/api/maintenance', (req, res) => {
