@@ -8,7 +8,6 @@ const express = require('express'),
 /* API entrypoints */
 // Singup
 router.post('/register', (req, res) => {
-  console.log(req.body)
   var user = new User({
     name: req.body.name,
     username: req.body.email,
@@ -56,7 +55,6 @@ router.get('/mygarden', passport.authenticate('jwt', {
 router.get('/api/user', passport.authenticate('jwt', {
   session: false
 }), (req, res) => {
-  console.log(req.user)
   if (!req.user) {
     res.json({
       username: 'nobody'
@@ -90,7 +88,7 @@ router.post("/api", passport.authenticate('jwt', {
       }
     },
     { safe: true, new: true }, (err, res) => {
-      if (err) { console.log(err) }
+      if (err) { console.error(err) }
 
       console.log("Added plant!")
 
@@ -98,46 +96,32 @@ router.post("/api", passport.authenticate('jwt', {
 })
 
 // route for maintenance
-router.get('/api/user/maintenance', passport.authenticate('jwt', {
+router.post("/api/maintenance", passport.authenticate('jwt', {
   session: false
 }), (req, res) => {
 
   if (!req.user) {
-    res.json({
-      username: 'nobody'
-    })
+    alert("No User")
   }
+  const query = { username: req.user.username }
+  const entry = req.body.type
 
-  const user = req.user
-  User.find({ username: user.maintenance.find() })
+  User.findOneAndUpdate(query,
+    {
+      $push:
+      {
+        maintenance: {
+          type: entry
+        }
+      }
+    },
+    { safe: true, new: true }, (err, res) => {
+      if (err) { console.log(err) }
 
+      console.log("Added maintenance!")
 
+    })
+  })
 
-  //  .then(dbMaintenance => {
-  //   res.json(dbMaintenance)
-  // })
-  // .catch(err => {
-  //   res.status(404).json(err)
-
-  //  })
-  // }
-  // })
-  //   //maintenance post route
-
-  //   router.post("/api/maintenance", ({ body }, res) => {
-  //     // we receive data on req.body
-  //     console.log('=============')
-  //     console.log(body)
-  //     // maintenance.create( body )
-  //     //   .then(dbMaintenance => {
-  //     //     console.log(dbMaintenance)
-  //     //     res.json(dbMaintenance)
-  //     //   })
-  //       .catch(err => {
-  //         res.status(404).json(err)
-  //       })
-  //   })
-
-  // }
 
   module.exports = router

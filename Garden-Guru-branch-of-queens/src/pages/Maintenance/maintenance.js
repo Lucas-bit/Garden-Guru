@@ -13,31 +13,199 @@ class Maintenance extends React.Component {
     super()
 
     this.chart = React.createRef();
-    this.state = {
-      options
-    }
+    this.state = {}
   }
   addEntry(entry) {
     // adds a new entry to database, takes in a type
-    axios.post('/api/user/maintenance', { type: entry })
+    fetch('/api/maintenance',{
+      method: "POST",
+      headers: {
+      Authorization: 'Bearer ' + localStorage.getItem('token'),
+      'Content-type': 'application/json'
+      },
+      body: JSON.stringify({ type: entry })
+    })
       .then(res => {
-        console.log(res)
+        res.json()
       })
   }
+  
+componentDidUpdate() {
+  // intial call to db on page load to retreive all entries
+  axios.get('/api/user', {headers: {
+      Authorization: 'Bearer ' + localStorage.getItem('token'),
+      'Content-type': 'application/json'
+    }})
+    .then(data => {
+      let parsedArr = data.data.maintenance.map(entry => {
+        let month = moment(entry.data).format('M');
+        // console.group(month)
+
+        return {
+          type: entry.type,
+          month: month
+        }
+      })
+
+      var count = {
+        0: {},
+        1: {},
+        2:{},
+        3:{},
+        4:{},
+        5:{},
+        6:{},
+        7:{},
+        8:{},
+        9:{},
+        10:{},
+        11:{},
+      }
+      var data = [{
+        dataPoints: [
+
+        ],
+        name:
+          "Water",
+        showInLegend:
+          true,
+        type:
+          "spline"
+
+      },
+      {
+        dataPoints: [
 
 
+          
+        ],
+        name:
+          "Weed",
+        showInLegend:
+          true,
+        type:
+          "spline"
+
+      },
+      {
+        dataPoints: [],
+        name:
+          "Prune",
+        showInLegend:
+          true,
+        type:
+          "spline"
+
+
+      }]
+      // gets month and add to the count
+      parsedArr.forEach(element => {
+
+        var type = element.type
+        var month = element.month
+        if (!count[month]) {
+          count[month] = {}
+        }
+        switch (type) {
+          case 'water':
+            if (count[month].waterCount) {
+              count[month].waterCount++
+            } else {
+              count[month].waterCount = 1
+            }
+            break;
+          case 'prune':
+            if (count[month].pruneCount) {
+              count[month].pruneCount++
+            } else {
+              count[month].pruneCount = 1
+            }
+            break;
+          case 'weed':
+            if (count[month].weedCount) {
+              count[month].weedCount++
+            } else {
+              count[month].weedCount = 1
+            }
+            break;
+        }
+
+
+      });
+
+      //pushing data to chart (not pushing)
+      for (var month in count) {
+        var d = new Date();
+        d.setMonth(month);
+        var m = d.getMonth()
+month = parseInt(month)
+        switch(month){
+          case 0:
+            m = 'Jan';
+            break;
+          case 1:
+            m = 'Feb';
+            break;
+          case 2:
+            m = 'Mar';
+            break;
+          case 3:
+            m = 'Apr';
+              break;
+          case 4:
+            m = 'May';
+            break;
+          case 5:
+            m = 'Jun'
+            break;
+          case 6:
+            m = 'Jul';
+            break;
+          case 7:
+            m = 'Aug';
+            break;
+          case 8:
+            m = 'Sep';
+            break;
+          case 9:
+            m = 'Oct';
+            break;
+          case 10:
+            m = 'Nov'
+            break;
+          case 11:
+            m = 'Dec';
+            break;
+        }
+        
+        data[0].dataPoints.push({
+          label: m, x: parseInt(month), y: count[month].waterCount || null
+        })
+
+          data[1].dataPoints.push({
+            label: m,
+            x: parseInt(month),
+            y: count[month].weedCount || null
+          })
+
+          data[2].dataPoints.push({
+            label: m,
+            x: parseInt(month),
+            y: count[month].pruneCount || null
+          })
+      }
+      this.setState({ options: { ...this.state.options,  data } })
+    })
+}
+  
   componentDidMount() {
-
-   
     // intial call to db on page load to retreive all entries
-    axios.get('/api/maintenance', {headers: {
+    axios.get('/api/user', {headers: {
         Authorization: 'Bearer ' + localStorage.getItem('token'),
         'Content-type': 'application/json'
       }})
       .then(data => {
-        console.log(data.data)
-        let parsedArr = data.data.map(entry => {
-          console.log(entry.date)
+        let parsedArr = data.data.maintenance.map(entry => {
           let month = moment(entry.data).format('M');
          // console.group(month)
 
@@ -47,13 +215,12 @@ class Maintenance extends React.Component {
           }
         })
 
-        console.log(parsedArr)
         var count = {
           0: {},
           1: {},
           2:{},
           3:{},
-          4:null,
+          4:{},
           5:{},
           6:{},
           7:{},
@@ -139,50 +306,46 @@ class Maintenance extends React.Component {
           var d = new Date();
           d.setMonth(month);
           var m = d.getMonth()
-          console.log(m)
-console.log('month: ', month)
 month = parseInt(month)
           switch(month){
-            case 1:
+            case 0:
               m = 'Jan';
               break;
-            case 2:
+            case 1:
               m = 'Feb';
               break;
-            case 3:
+            case 2:
               m = 'Mar';
               break;
-            case 4:
+            case 3:
               m = 'Apr';
                break;
-            case 5:
+            case 4:
               m = 'May';
               break;
-            case 6:
+            case 5:
               m = 'Jun'
               break;
-            case 7:
+            case 6:
               m = 'Jul';
               break;
-            case 8:
+            case 7:
               m = 'Aug';
               break;
-            case 9:
+            case 8:
               m = 'Sep';
               break;
-            case 10:
+            case 9:
               m = 'Oct';
               break;
-            case 11:
+            case 10:
               m = 'Nov'
               break;
-            case 12:
+            case 11:
               m = 'Dec';
               break;
           }
           
-          console.log('m: ', m)
-
           data[0].dataPoints.push({
             label: m, x: parseInt(month), y: count[month].waterCount || null
           })
@@ -199,9 +362,7 @@ month = parseInt(month)
               y: count[month].pruneCount || null
             })
         }
-        console.log(count)
 
-        console.log(data)
         this.setState({ options: { ...this.state.options,  data } })
       })
   }

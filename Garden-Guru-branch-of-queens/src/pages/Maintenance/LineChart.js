@@ -19,11 +19,12 @@ class Chart extends Component {
 // call the server and request all the maintenance entries
   componentDidMount() {
     console.log('Component did Mount')
-    axios.get('/api/maintenance', {headers: {
+    axios.get('/api/user', {headers: {
       Authorization: 'Bearer ' + localStorage.getItem('token'),
       'Content-type': 'application/json'
     }})
-       .then(response => {console.log(response)})
+       .then(response => {response.status(200)})
+       .catch(err=>{console.error(err)})
         // this.setState({ options: response.data })
   
     
