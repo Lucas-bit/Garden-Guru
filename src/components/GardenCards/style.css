@@ -64,6 +64,14 @@ body{
     color: palegoldenrod;
 }
 
+.single-services:hover .add-button{
+    border: solid 1px palegoldenrod
+}
+
+.single-services:hover .delete-plant{
+    border: solid 1px palegoldenrod
+}
+
 .bigContainer{
     margin: auto !important;
     width: 90%
@@ -84,6 +92,26 @@ body{
 .services-area{
     width: 100%;
     margin: auto;
+}
+
+.delete-plant{
+    border: none;
+    border-radius: 8px;
+    background-color: #c5464a;
+    color: palegoldenrod
+}
+
+.delete-plant:hover{
+    background-color: palegoldenrod;
+    color: #c5464a
+}
+
+
+.Toastify__toast{
+    background-color: #c5464a !important;
+    transition-delay: 50000 !important;
+    color: palegoldenrod;
+    opacity: 90%
 }
 
 /* Mobile Section*/
@@ -117,6 +145,10 @@ body{
     width: 6.5%;
     vertical-align: baseline;
     }
+
+    .plant-name{
+        font-size: large;
+    }
    }
 
 @media only screen and (max-width: 688px) {
@@ -139,17 +171,20 @@ body{
     }
 
     .myGarden-title{
-        font-size: x-large;
+        font-size: xx-large;
     }
 
     .myGarden-logo{
     vertical-align: baseline;
-    width:8.5%
+    width:10.5%
     }
    }
 
    @media only screen and (max-width: 325px) {
-       .myGarden-logo{
-           width: 8.5%
+       .myGarden-title{
+           font-size: xx-large;
+       }
+        .myGarden-logo{
+        width: 12.5%;
        }
    }

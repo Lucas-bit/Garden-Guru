@@ -1,19 +1,25 @@
 import React, { useReducer } from 'react'
-import './style.css'
 import Logo from '../../images/Garden-Guru-Transparent.png'
 import returnPlantCard from '../SearchCards/index'
 import potted from '../../images/pottedSucculent.png'
+import { toast } from 'react-toastify' 
+import 'react-toastify/dist/ReactToastify.css'
+import './style.css'
 
+//Toast Configuration
+toast.configure({})
+
+
+
+//Cards Function
 function myServices(props){
 
-    
-    
+//Toast Notification Function
+const notify = () => {
+    toast.info('Plant removed from your garden successfully',{})
+}
+
 const plantCards = props.plants
-
-    //setPlantCards(returnPlantCard)
-
-
-//create fake dataset from data that currently have then have ract build up the cards from the data set
 
 const handleClick = (e)=>{
 //  console.log(e.currentTarget.dataset.name)
@@ -26,7 +32,7 @@ fetch(`/api/plant/${data}`, {
       Authorization: 'Bearer ' + localStorage.getItem('token')
     }
   })
-.then(alert("DELETED"))
+.then(notify())
 }
 
 
@@ -53,8 +59,8 @@ return(
                     <div className="single-services text-center wow fadeInDown" data-wow-delay="0.2s">
                         <img src={potted} className="services-icon"/>
                         <div className="services-content">
-                        <button onClick={handleClick} data-name = {name} data-id = {_id} className = "delete">X</button> 
-                            <h3>{ name }</h3> 
+                            <h3 className="plant-name">{ name }</h3> 
+                            <button onClick={handleClick} data-name = {name} data-id = {_id} className = "delete-plant">Remove</button> 
                         </div>
                     </div>
                 </div>)})}
