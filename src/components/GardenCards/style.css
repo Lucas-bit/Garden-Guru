@@ -11,7 +11,7 @@ body{
 
 .services-content h3 {
     line-height: 1.9;
-    text-transform: uppercase;
+    text-transform: capitalize;
 }
 
 .services-icon {

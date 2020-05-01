@@ -37,6 +37,10 @@
 .search-logo{
         width: 8.5%
     }
+
+    .search-group{
+        width: 65%
+    }
 }
 
 @media only screen and (max-width: 320px) {

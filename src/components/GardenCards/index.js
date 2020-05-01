@@ -41,7 +41,7 @@ return(
     <div className="bigContainer"   >
         <h1 className = 'myGarden-title'><span><img className ="myGarden-logo" src={Logo}/></span>MY GARDEN<span><img className ="myGarden-logo" src={Logo}/></span></h1>
         <div id="services" className="services-area section-padding">
-        <p className="welcome-name">Welcome home, { props.name }</p>
+        <p className="welcome-name">Welcome, { props.name }</p>
 
         <div className="container">
             <div className="row">
@@ -53,13 +53,14 @@ return(
                 </div>
             </div>
             <div className="row">
-                {props.plants.map(({ _id, name, type, height }) => {
+                {props.plants.map(({ _id, name, scientific_name, type, height }) => {
                 return (
                 <div key={ _id } className="col-xs-12 col-sm-6 col-md-4">
                     <div className="single-services text-center wow fadeInDown" data-wow-delay="0.2s">
                         <img src={potted} className="services-icon"/>
                         <div className="services-content">
                             <h3 className="plant-name">{ name }</h3> 
+                            <h3 className ="plant-name">{scientific_name}</h3>
                             <button onClick={handleClick} data-name = {name} data-id = {_id} className = "delete-plant">Remove</button> 
                         </div>
                     </div>
