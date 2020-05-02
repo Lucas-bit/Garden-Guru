@@ -1,0 +1,88 @@
+.myMaintenance-logo{
+    width: 4.5%;
+    vertical-align: baseline;
+}
+
+.myMaintenance-title{
+    margin-top: 2%;
+    font-size: 360%;
+    text-align: center;
+    }
+
+.dropdown-basic-button{
+    margin: auto;
+    margin-right: 0px;
+    justify-content: center;
+    width: 17%
+} 
+
+.button-row{
+    justify-content: center;
+    width: 69.5%;
+    margin: auto;
+}
+
+/* .col-lg-3{
+    width: 17%
+} */
+
+@media only screen and (max-width: 1024px) {
+    
+
+    .myMaintenance-title{
+        font-size: 270%;
+        text-align: center;
+        padding-left: 0
+
+    }
+
+    .myMaintenance-logo{
+    width: 4.5%;
+    vertical-align: baseline;
+    }
+
+    .plant-name{
+        font-size: large;
+    }
+   }
+
+@media only screen and (max-width: 768px){
+    .myMaintenance-title{
+        font-size: 208%;
+    }
+}
+
+@media only screen and (max-width: 688px) {
+    
+
+    .myMaintenance-title{
+        font-size: x-large;
+        margin-top: 20px;
+    }
+
+    .myMaintenance-logo{
+    vertical-align: baseline;
+    }
+   }
+
+   @media only screen and (max-width: 425px) {
+   
+
+    .myMaintenance-title{
+        font-size: 98%;
+    }
+
+    .myMaintenance-logo{
+    vertical-align: baseline;
+    width: 5.5%
+    }
+   }
+
+   @media only screen and (max-width: 325px) {
+       .myMaintenance-title{
+           font-size: 85%;
+       }
+        .myMaintenance-logo{
+        width: 5.5%;
+       }
+   }

@@ -50,7 +50,7 @@ render(){
                   </MDBNavLink>
                 </MDBNavItem>
                 <MDBNavItem active>
-                  <MDBNavLink to="/maintenence">
+                  <MDBNavLink to="/maintenance">
                   <img
                           alt=""
                           src= {shovel}
@@ -58,7 +58,7 @@ render(){
                           height="15"
                           className="magnify glass d-inline-block align-bottom"
                         />{' '}
-                    Maintenence
+                    Maintenance
                   </MDBNavLink>
                 </MDBNavItem>
                 <MDBNavItem active>

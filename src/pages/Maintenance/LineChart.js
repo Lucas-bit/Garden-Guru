@@ -2,7 +2,7 @@
 import React, { Component } from 'react'
 import CanvasJSReact from '../../assets/canvasjs.react'
 import axios from 'axios'
-import options from './testData'
+import hamburgerMenuPage from '../../components/Hamburger';
 
 
 // var CanvasJS = CanvasJSReact.CanvasJS
@@ -11,9 +11,7 @@ var CanvasJSChart = CanvasJSReact.CanvasJSChart
 class Chart extends Component {
   constructor( ){
   super();
-  this.state={
-    options:options
-  }
+  this.state={  }
 }
 
 // call the server and request all the maintenance entries
@@ -35,11 +33,11 @@ class Chart extends Component {
 
     return (
   
-        <div>
-          <div style={{ width: '50%', marginLeft: "25%", marginRight: "25%" }}>
+        <React.Fragment>
+          <div style={{ width: '50%', marginLeft: "25%", marginRight: "25%", marginBottom:"20px" }}>
             <CanvasJSChart options={this.props.options} />
           </div>
-        </div>
+          </React.Fragment>
     
     )
   }
