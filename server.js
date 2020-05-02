@@ -2,11 +2,10 @@
 const path = require('path')
 // MongoDB
 const mongoose = require('mongoose')
+const db = process.env.MONGODB_URI
 
 mongoose
-  .connect(
-    'mongodb+srv://alchemist:a5ZzeU0vf8r4ZZdO@cluster0-0zueo.mongodb.net/Garden-Guru?retryWrites=true&w=majority',
-   { useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true },()=>{
+  .connect(db,{ useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true },()=>{
     console.log(`🦢The Goose is loose 🦢`)
    })
 
@@ -31,13 +30,13 @@ app.use(function(_, res, next) {
 });
 
 // Routes
-app.use('/', require('./routes'));
+app.use('/', require(path.join(__dirname,'./routes')));
 
 
 // Run server
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === 'production') {
-  app.use(express.static('client/build'))
+  app.use(express.static(path.join(__dirname, 'client/build')))
 }
 // Start the API server
 app.listen(port, function () {
