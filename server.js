@@ -2,7 +2,8 @@
 const path = require('path')
 // MongoDB
 const mongoose = require('mongoose')
-const db = process.env.MONGODB_URI
+const dbKey = 'a5ZzeU0vf8r4ZZdO'
+const db = process.env.MONGODB_URI || 'mongodb+srv://alchemist:'+dbKey+'@cluster0-0zueo.mongodb.net/Garden-Guru?retryWrites=true&w=majority'
 
 mongoose
   .connect(db,{ useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true },()=>{
