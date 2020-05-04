@@ -1,21 +1,33 @@
 ## Garden Guru
-image goes here
 
+![](garden-guru-login-screenshot.png) 
 
 ## About 
 A garden tracking mobile-friendly application aimed at helping users keep track of their plants to ensure they are receiving proper care. Users are able to search for their plants, add plants to their garden, remove plants as well as track the overall maintenance of their garden.  
 
-## Getting Started
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes: Download a copy of the zip file from Github as pictured below.
+![](myGarden-screenshot.png)
 
-image goes here
+## Getting Started
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes: 
+First, switch to the branch named: branch-of-queens
+
+![](branch-of-queens-switch.png)
+
+Then, download a copy of the zip file from Github as pictured below.
+
+![](branch-of-queens-zip-DL.png)
 
 Unzip the zip file and then open the file in your code editor of choice.
 
-Open up the terminal in your code editor and run the command: node server.js 
+Open up 2 terminals in your code editor
+
+In one terminal run the command: node server.js 
+
+In the other terminal run the command: npm start
+
 This will automatically open up your browser and run the application.
 
-image goes here
+![](garden-guru-vs-code.png)
 
 ## Built With 
 
