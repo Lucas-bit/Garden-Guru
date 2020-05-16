@@ -12,7 +12,7 @@ return(
           <h1 className="number4">4<img className='four-0-four-logo' src={logo}/>4</h1>
         </div>
         
-      <div className="oops">Oops! It looks like you wondered off path.
+      <div className="oops">Oops! It looks like you wandered off path.
       <br></br>
           <MDBNavLink className="return-button" to="/mygarden">
           Return to your garden, your plants miss you.

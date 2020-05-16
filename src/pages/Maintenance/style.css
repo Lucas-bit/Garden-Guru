@@ -13,13 +13,18 @@
     margin: auto;
     margin-right: 0px;
     justify-content: center;
-    width: 17%
+    width: 17%;
+    color: #C54648
 } 
 
 .button-row{
     justify-content: center;
     width: 69.5%;
     margin: auto;
+}
+
+a.dropdown-item:hover{
+color: #C54648 !important
 }
 
 /* .col-lg-3{

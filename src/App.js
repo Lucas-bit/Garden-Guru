@@ -11,6 +11,7 @@ import MyGarden from './pages/MyGarden/myGarden';
 import failedSearch from './pages/FailedSearch/FailedSearch'
 import Logout from './components/Logout/index';
 import Maintenance from './pages/Maintenance/maintenance';
+import NewMaintenance from './pages/NewMaintenance/newMaintenance'
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
           <PrivateRoute path="/mygarden" component={MyGarden}/>
           <PrivateRoute path="/logout" component={Logout}/>
           <PrivateRoute path="/maintenance" component={Maintenance}/>
+          <PrivateRoute path="/newMaintenance" component={NewMaintenance}/>
           <Route path="/*" component={failedSearch}/>
           </Switch>
         </Router>

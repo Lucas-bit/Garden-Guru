@@ -131,7 +131,7 @@ router.post("/api/maintenance", passport.authenticate('jwt', {
       alert("No User")
     } 
     const query = { username: req.user.username }
-    User.updateOne(query,
+    User.updateOne(query, //trying to update here and is erroring out
       { $pull: 
         { plants: {_id: req.params.id}}},
       (err,res)=>{
